@@ -1,0 +1,338 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAINES - Robotics & AI New England Society</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        .overlay {
+            background: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+            padding: 20px;
+            transition: background 0.3s ease;
+        }
+        .dark .overlay {
+            background: rgba(30, 30, 30, 0.85);
+            color: #e0e0e0;
+        }
+        .dark h2 {
+            color: #D8BFD8;
+            border-bottom-color: #D8BFD8;
+        }
+        .dark .member a {
+            color: #B0C4DE;
+        }
+        .dark .event a {
+            color: #B0C4DE;
+        }
+        .dark .future-event button {
+            background: #6A5ACD;
+            color: #e0e0e0;
+        }
+        .dark .future-event button:hover {
+            background: #4B0082;
+        }
+        .hero {
+            position: relative;
+            height: 80vh;
+            background: url('https://example.com/charles-river-mit.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin: 10px 0 0;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #E6E6FA, #D8BFD8);
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        .dark nav {
+            background: linear-gradient(90deg, #4B0082, #6A5ACD);
+        }
+        nav a {
+            color: #333;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+        }
+        .dark nav a {
+            color: #e0e0e0;
+        }
+        nav a:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .dark nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        nav a:active {
+            transform: translateY(1px);
+        }
+        .theme-toggle {
+            background: #D8BFD8;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-left: 20px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .dark .theme-toggle {
+            background: #6A5ACD;
+            color: #e0e0e0;
+        }
+        .theme-toggle:hover {
+            background: #E6E6FA;
+        }
+        .dark .theme-toggle:hover {
+            background: #4B0082;
+        }
+        section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            padding-top: 80px;
+        }
+        h2 {
+            color: #6A5ACD;
+            border-bottom: 2px solid #6A5ACD;
+            padding-bottom: 5px;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+        }
+        .intro p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .committee {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .member {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+        .member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .member a {
+            color: #0077b5;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .member a:hover {
+            text-decoration: underline;
+        }
+        .event {
+            margin-bottom: 30px;
+        }
+        .event img {
+            max-width: 300px;
+            height: auto;
+            margin: 10px 0;
+        }
+        .event a {
+            color: #0077b5;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .event a:hover {
+            text-decoration: underline;
+        }
+        .future-event button {
+            background: #D8BFD8;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .future-event button:hover {
+            background: #E6E6FA;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <img src="https://example.com/raines-logo.png" alt="RAINES Logo">
+        <h1>Robotics & AI New England Society (RAINES)</h1>
+        <p>Innovating the Future in Boston</p>
+    </div>
+    <div class="overlay">
+        <nav>
+            <a href="#intro">Introduction</a>
+            <a href="#committee">Committee</a>
+            <a href="#events">Events</a>
+            <button class="theme-toggle" onclick="toggleTheme()">Switch to Dark Mode</button>
+        </nav>
+
+        <section id="intro" class="intro">
+            <h2>Welcome to RAINES</h2>
+            <p>
+                The Robotics & AI New England Society (RAINES) is a vibrant community of Korean scientists, engineers, and entrepreneurs based around Boston. Our mission is to foster collaboration, innovation, and growth in the fields of robotics and artificial intelligence. Join us to connect, learn, and contribute to groundbreaking advancements in technology.
+            </p>
+        </section>
+
+        <section id="committee" class="committee">
+            <h2>Committee Members</h2>
+            <div class="member">
+                <img src="https://example.com/member1.jpg" alt="Member 1">
+                <h3>Dr. Jihoon Kim</h3>
+                <p>President - Leads strategic initiatives and oversees RAINES operations.</p>
+                <a href="https://linkedin.com/in/jihoonkim" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="member">
+                <img src="https://example.com/member2.jpg" alt="Member 2">
+                <h3>Dr. Soo-Yeon Park</h3>
+                <p>Event Coordinator - Organizes workshops, seminars, and networking events.</p>
+                <a href="https://linkedin.com/in/sooyeonpark" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="member">
+                <img src="https://example.com/member3.jpg" alt="Member 3">
+                <h3>Min-Jae Lee</h3>
+                <p>Technical Lead - Manages tech projects and mentors members.</p>
+                <a href="https://linkedin.com/in/minjaelee" target="_blank">LinkedIn Profile</a>
+            </div>
+        </section>
+
+        <section id="events">
+            <h2>Events</h2>
+            <div class="past-events">
+                <h3>Recent Events</h3>
+                <div class="event">
+                    <h4>AI Innovation Summit 2024</h4>
+                    <p>Held on October 15, 2024, this summit featured keynotes on AI advancements.</p>
+                    <img src="https://example.com/event1.jpg" alt="AI Innovation Summit">
+                    <p><a href="https://youtube.com/watch?v=example1" target="_blank">Watch the Keynote</a></p>
+                </div>
+                <div class="event">
+                    <h4>Robotics Workshop 2024</h4>
+                    <p>A hands-on workshop on September 10, 2024, focusing on robotic automation.</p>
+                    <img src="https://example.com/event2.jpg" alt="Robotics Workshop">
+                    <p><a href="https://youtube.com/watch?v=example2" target="_blank">Watch the Session</a></p>
+                </div>
+            </div>
+            <div class="future-events">
+                <h3>Upcoming Events</h3>
+                <div class="event future-event">
+                    <h4>RAINES Annual Conference 2025</h4>
+                    <p>Join us on June 20, 2025, for رع annual conference on AI and robotics trends.</p>
+                    <button onclick="addToCalendar('RAINES Annual Conference 2025', '2025-06-20T09:00:00', '2025-06-20T17:00:00', 'Boston, MA')">Add to Calendar</button>
+                </div>
+                <div class="event future-event">
+                    <h4>Networking Mixer 2025</h4>
+                    <p>A networking event on August 15, 2025, to connect with industry leaders.</p>
+                    <button onclick="addToCalendar('Networking Mixer 2025', '2025-08-15T18:00:00', '2025-08-15T21:00:00', 'Boston, MA')">Add to Calendar</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = document.body.classList.contains('dark') ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+        }
+
+        function addToCalendar(title, start, end, location) {
+            const event = {
+                title: title,
+                start: new Date(start),
+                end: new Date(end),
+                location: location
+            };
+            const calLink = `data:text/calendar;charset=utf-8,${encodeURIComponent(
+                `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:${event.title}\nDTSTART:${event.start.toISOString().replace(/-|:|\.\d+/g, '')}\nDTEND:${event.end.toISOString().replace(/-|:|\.\d+/g, '')}\nLOCATION:${event.location}\nEND:VEVENT\nEND:VCALENDAR`
+            )}`;
+            const link = document.createElement('a');
+            link.href = calLink;
+            link.download = `${title}.ics`;
+            link.click();
+        }
+    </script>
+</body>
+</html>
