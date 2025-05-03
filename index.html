@@ -82,7 +82,7 @@
         .hero {
             position: relative;
             height: 80vh;
-            background: url('https://example.com/charles-river-mit.jpg') no-repeat center center;
+            background: url('assets/top_image_2.png') no-repeat top center;
             background-size: cover;
             display: flex;
             flex-direction: column;
@@ -91,6 +91,18 @@
             text-align: center;
             color: white;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero-logo {
+            position: absolute;
+            bottom: 370px;
+            left: 30px;
+            width: 100px;
+            height: auto;
+            z-index: 2;
+            background: rgba(255,255,255,0.90);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            padding: 8px;
         }
         .hero img {
             width: 200px;
@@ -237,7 +249,7 @@
 </head>
 <body>
     <div class="hero">
-        <img src="https://example.com/raines-logo.png" alt="RAINES Logo">
+        <img src="assets/raines_logo_1.png" alt="RAINES Logo" class="hero-logo">
         <h1>Robotics & AI New England Society (RAINES)</h1>
         <p>Innovating the Future in Boston</p>
     </div>
@@ -259,22 +271,30 @@
         <section id="committee" class="committee">
             <h2>Committee Members</h2>
             <div class="member">
-                <img src="https://example.com/member1.jpg" alt="Member 1">
-                <h3>Dr. Jihoon Kim</h3>
-                <p>President - Leads strategic initiatives and oversees RAINES operations.</p>
-                <a href="https://linkedin.com/in/jihoonkim" target="_blank">LinkedIn Profile</a>
+                <img src="assets/yunkyung_kim_profile.jpeg" alt="Yunkyung Kim">
+                <h3>Yunkyung Kim</h3>
+                <p>President</p>
+                <a href="https://www.linkedin.com/in/yunkyung-kim-ph-d-23a75320/" target="_blank">LinkedIn Profile</a>
             </div>
             <div class="member">
-                <img src="https://example.com/member2.jpg" alt="Member 2">
-                <h3>Dr. Soo-Yeon Park</h3>
-                <p>Event Coordinator - Organizes workshops, seminars, and networking events.</p>
-                <a href="https://linkedin.com/in/sooyeonpark" target="_blank">LinkedIn Profile</a>
+                <img src="assets/jinwon_chung_profile.jpeg" alt="Jinwon Chung">
+                <h3>Jinwon Chung</h3>
+                <a href="https://www.linkedin.com/in/jinwon-chung3/" target="_blank">LinkedIn Profile</a>
             </div>
             <div class="member">
-                <img src="https://example.com/member3.jpg" alt="Member 3">
-                <h3>Min-Jae Lee</h3>
-                <p>Technical Lead - Manages tech projects and mentors members.</p>
-                <a href="https://linkedin.com/in/minjaelee" target="_blank">LinkedIn Profile</a>
+                <img src="assets/andy_park_profile.jpeg" alt="Andy Park">
+                <h3>Andy Park</h3>
+                <a href="https://www.linkedin.com/in/robodreamer/" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="member">
+                <img src="assets/jenna_hong_profile.jpeg" alt="Jenna Hong">
+                <h3>Jenna Hong</h3>
+                <a href="https://www.linkedin.com/in/jennahong21/" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="member">
+                <img src="assets/seokwon_lee_profile.jpeg" alt="Seok-Won Lee">
+                <h3>Seok-Won Lee</h3>
+                <a href="https://www.linkedin.com/in/seokwonlee/" target="_blank">LinkedIn Profile</a>
             </div>
         </section>
 
@@ -283,30 +303,21 @@
             <div class="past-events">
                 <h3>Recent Events</h3>
                 <div class="event">
-                    <h4>AI Innovation Summit 2024</h4>
-                    <p>Held on October 15, 2024, this summit featured keynotes on AI advancements.</p>
-                    <img src="https://example.com/event1.jpg" alt="AI Innovation Summit">
-                    <p><a href="https://youtube.com/watch?v=example1" target="_blank">Watch the Keynote</a></p>
-                </div>
-                <div class="event">
-                    <h4>Robotics Workshop 2024</h4>
-                    <p>A hands-on workshop on September 10, 2024, focusing on robotic automation.</p>
-                    <img src="https://example.com/event2.jpg" alt="Robotics Workshop">
-                    <p><a href="https://youtube.com/watch?v=example2" target="_blank">Watch the Session</a></p>
+                    <h4>RAINES Launching Event: Critical & Emerging Technology Cooperation in the US-Korea</h4>
+                    <p>Date: April 28, 2025<br>
+                    Location: CIC Cambridge<br>
+                    Invited Speakers: Dr. Haewon Park (MIT), Prof. Yoon Kim (MIT)</p>
+                    <p>
+                        This seminar, hosted by the Korean Consulate in Boston, brought together experts and enthusiasts to explore the future of AI-powered robotics and autonomous driving. Dr. Haewon Park shared insights on social robots, while Prof. Yoon Kim discussed large language models, sparking engaging conversations on emerging technologies. The event fostered US-Korea collaboration, offering a platform for networking, knowledge sharing, and building new connections in the Boston tech community.
+                    </p>
+                    <div style="display: flex; justify-content: center; align-items: center; background: #f8f8f8; padding: 30px 0;">
+                        <img src="assets/main_image.png" alt="RAINES Event Photo" style="max-width: 90vw; max-height: 60vh; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.10);">
+                    </div>
                 </div>
             </div>
             <div class="future-events">
                 <h3>Upcoming Events</h3>
-                <div class="event future-event">
-                    <h4>RAINES Annual Conference 2025</h4>
-                    <p>Join us on June 20, 2025, for رع annual conference on AI and robotics trends.</p>
-                    <button onclick="addToCalendar('RAINES Annual Conference 2025', '2025-06-20T09:00:00', '2025-06-20T17:00:00', 'Boston, MA')">Add to Calendar</button>
-                </div>
-                <div class="event future-event">
-                    <h4>Networking Mixer 2025</h4>
-                    <p>A networking event on August 15, 2025, to connect with industry leaders.</p>
-                    <button onclick="addToCalendar('Networking Mixer 2025', '2025-08-15T18:00:00', '2025-08-15T21:00:00', 'Boston, MA')">Add to Calendar</button>
-                </div>
+
             </div>
         </section>
     </div>
