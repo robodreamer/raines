@@ -44,6 +44,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAINES - Robotics & AI New England Society</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: 'Nunito', sans-serif;
@@ -196,6 +197,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
         }
         .member {
             flex: 1 1 300px;
@@ -245,6 +247,49 @@
         .future-event button:hover {
             background: #E6E6FA;
         }
+        .sponsor {
+            margin-bottom: 30px;
+        }
+        .sponsor h3 {
+            color: #6A5ACD;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        .dark .sponsor h3 {
+            color: #D8BFD8;
+        }
+        .sponsor-item {
+            background: rgba(216, 191, 216, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #6A5ACD;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .dark .sponsor-item {
+            background: rgba(106, 90, 205, 0.1);
+            border-left-color: #D8BFD8;
+        }
+        .sponsor-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(106, 90, 205, 0.15);
+        }
+        .sponsor-item h4 {
+            color: #6A5ACD;
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+        }
+        .dark .sponsor-item h4 {
+            color: #D8BFD8;
+        }
+        .sponsor-item p {
+            margin: 0;
+            line-height: 1.6;
+            color: #555;
+        }
+        .dark .sponsor-item p {
+            color: #ccc;
+        }
         @media (max-width: 600px) {
           .hero {
             height: 40vh;
@@ -284,6 +329,395 @@
             max-width: 100%;
             height: auto;
         }
+        .footer {
+            background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+            color: #333;
+            padding: 40px 0 20px 0;
+            margin-top: 60px;
+            transition: all 0.3s ease;
+        }
+        .dark .footer {
+            background: linear-gradient(135deg, #4B0082, #6A5ACD);
+            color: #e0e0e0;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        .footer-section {
+            flex: 1;
+        }
+        .footer-section h3 {
+            color: #6A5ACD;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #6A5ACD;
+            padding-bottom: 8px;
+        }
+        .dark .footer-section h3 {
+            color: #D8BFD8;
+            border-bottom-color: #D8BFD8;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 12px;
+        }
+        .contact-item i {
+            color: #6A5ACD;
+            font-size: 1.2em;
+            width: 20px;
+            text-align: center;
+        }
+        .dark .contact-item i {
+            color: #D8BFD8;
+        }
+        .contact-item a {
+            color: #0077b5;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .dark .contact-item a {
+            color: #B0C4DE;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #6A5ACD;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .dark .social-link {
+            color: #D8BFD8;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(106, 90, 205, 0.2);
+        }
+        .social-link i {
+            font-size: 1.3em;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(106, 90, 205, 0.2);
+        }
+        .dark .footer-bottom {
+            border-top-color: rgba(216, 191, 216, 0.2);
+        }
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        @media (max-width: 600px) {
+          .hero {
+            height: 40vh;
+            padding: 20px 0;
+          }
+          .hero h1 {
+            font-size: 2em;
+          }
+          .hero-logo {
+            width: 60px;
+            left: 10px;
+            bottom: 10px;
+            padding: 4px;
+          }
+          nav {
+            flex-direction: column;
+            padding: 10px 0;
+          }
+          section {
+            padding: 10px;
+            padding-top: 60px;
+          }
+          .committee {
+            flex-direction: column;
+            gap: 10px;
+          }
+          .member img {
+            width: 100px;
+            height: 100px;
+          }
+          .event img {
+            max-width: 100%;
+            height: auto;
+          }
+          .footer-content {
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+          }
+          .social-links {
+            justify-content: center;
+          }
+          .contact-item {
+            justify-content: center;
+          }
+        }
+
+        /* About Us Section */
+        #about-us p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .member-distribution {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .distribution-item {
+            background: rgba(216, 191, 216, 0.1);
+            padding: 20px 30px;
+            border-radius: 15px;
+            border-bottom: 3px solid #6A5ACD;
+            transition: all 0.3s ease;
+        }
+        .dark .distribution-item {
+            background: rgba(106, 90, 205, 0.1);
+            border-bottom-color: #D8BFD8;
+        }
+        .distribution-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(106, 90, 205, 0.15);
+        }
+        .distribution-item .count {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #6A5ACD;
+            display: block;
+        }
+        .dark .distribution-item .count {
+            color: #D8BFD8;
+        }
+        .distribution-item .label {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #555;
+        }
+        .dark .distribution-item .label {
+            color: #ccc;
+        }
+        .about-us-details {
+            font-size: 1.1em !important;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .about-us-details em {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        .member-areas-chart {
+            margin: 40px auto;
+            max-width: 700px;
+        }
+        .member-areas-chart img {
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Benefits Section */
+        .benefits-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            flex: 1;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            border-top: 4px solid #6A5ACD;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .dark .benefit-item {
+            background: rgba(0,0,0,0.2);
+            border-top-color: #D8BFD8;
+        }
+        .benefit-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(106, 90, 205, 0.2);
+        }
+        .benefit-icon i {
+            font-size: 2.2em;
+            color: #6A5ACD;
+        }
+        .dark .benefit-icon i {
+            color: #D8BFD8;
+        }
+        .benefit-text h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin: 0 0 10px 0;
+        }
+        .dark .benefit-text h3 {
+            color: #e0e0e0;
+        }
+        .benefit-text p {
+            line-height: 1.6;
+            color: #555;
+            margin: 0;
+        }
+        .dark .benefit-text p {
+            color: #ccc;
+        }
+        .benefit-text p em {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        /* Become a Sponsor Section */
+        #become-sponsor {
+            background: rgba(230, 230, 250, 0.3);
+            border-top: 1px solid rgba(106, 90, 205, 0.1);
+            border-bottom: 1px solid rgba(106, 90, 205, 0.1);
+        }
+        .dark #become-sponsor {
+            background: rgba(75, 0, 130, 0.15);
+            border-top-color: rgba(216, 191, 216, 0.15);
+            border-bottom-color: rgba(216, 191, 216, 0.15);
+        }
+        #become-sponsor h3 {
+            text-align: center;
+            color: #6A5ACD;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-size: 1.6em;
+        }
+        .dark #become-sponsor h3 {
+            color: #D8BFD8;
+        }
+        .sponsorship-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-size: 1.2em;
+        }
+        .sponsorship-intro em {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        .sponsorship-details {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .detail-item {
+            flex: 1;
+            max-width: 350px;
+            padding: 25px;
+            text-align: center;
+        }
+        .detail-item i {
+            font-size: 2em;
+            color: #6A5ACD;
+            margin-bottom: 15px;
+        }
+        .dark .detail-item i {
+            color: #D8BFD8;
+        }
+        .detail-item h4 {
+            font-size: 1.3em;
+            margin: 0 0 10px 0;
+        }
+        .contribution-options {
+            margin: 50px auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px 25px;
+            border-radius: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .dark .option-item {
+            background: rgba(0,0,0,0.2);
+        }
+        .option-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(106, 90, 205, 0.15);
+        }
+        .option-item i {
+            font-size: 1.5em;
+            color: #6A5ACD;
+        }
+        .dark .option-item i {
+            color: #D8BFD8;
+        }
+        .option-item p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .sponsorship-contact {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+        .sponsorship-contact p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .contact-button {
+            display: inline-block;
+            background: #6A5ACD;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+        .dark .contact-button {
+            background: #D8BFD8;
+            color: #333;
+        }
+        .contact-button:hover {
+            background: #4B0082;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .dark .contact-button:hover {
+            background: #E6E6FA;
+        }
     </style>
 </head>
 <body>
@@ -295,7 +729,11 @@
     <div class="overlay">
         <nav>
             <a href="#intro">Introduction</a>
+            <a href="#about-us">About Us</a>
+            <a href="#benefits">Benefits</a>
             <a href="#committee">Committee</a>
+            <a href="#sponsors">Sponsors</a>
+            <a href="#become-sponsor">Sponsorship</a>
             <a href="#events">Events</a>
             <button class="theme-toggle" onclick="toggleTheme()">Switch to Dark Mode</button>
         </nav>
@@ -307,33 +745,170 @@
             </p>
         </section>
 
-        <section id="committee" class="committee">
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>As of June 2025, RAINES has grown to include 32 registered members, creating a diverse and talented community.</p>
+            <div class="member-distribution">
+                <div class="distribution-item">
+                    <span class="count">20</span>
+                    <span class="label">Industry Professionals</span>
+                </div>
+                <div class="distribution-item">
+                    <span class="count">12</span>
+                    <span class="label">Academia Members</span>
+                </div>
+            </div>
+            <p class="about-us-details">
+                Our community is enriched by members from a variety of fields beyond just research and engineering, including product management and design.
+                <br><em>(2025년 6월 현재 32명 회원 등록. Industry 종사자 20명, Academia 12명. Research 및 Engineering 외 Product Management, Design 분야 등에도 다양하게 분포)</em>
+            </p>
+            <div class="member-areas-chart">
+                <img src="assets/about_us_members_areas.png" alt="Chart showing RAINES members' areas of expertise">
+            </div>
+        </section>
+
+        <section id="benefits">
+            <h2>Member Benefits</h2>
+            <div class="benefits-container">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="benefit-text">
+                        <h3>Exclusive Chat Room</h3>
+                        <p>Invitation to an open chat room for networking with Robotics and AI professionals in the New England area. <em>(뉴잉글랜드 지역 내 Robotics와 AI 분야 종사자간 소통을 위한 오픈챗방 초대)</em></p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="benefit-text">
+                        <h3>Priority Event Access</h3>
+                        <p>Receive priority invitations to all events hosted by RAINES, ensuring you never miss out. <em>(RAINES 주최 행사에의 우선 초대)</em></p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="benefit-text">
+                        <h3>Event & News Updates</h3>
+                        <p>Stay informed with the latest news and updates on Robotics and AI events in New England and beyond. <em>(뉴잉글랜드 지역 및 타지역 Robotics와 AI 관련 행사 소식 공유)</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="committee">
             <h2>Committee Members</h2>
-            <div class="member">
-                <img src="assets/yunkyung_kim_profile.jpeg" alt="Yunkyung Kim">
-                <h3>Yunkyung Kim</h3>
-                <p>President</p>
-                <a href="https://www.linkedin.com/in/yunkyung-kim-ph-d-23a75320/" target="_blank">LinkedIn Profile</a>
+            <div class="committee">
+                <div class="member">
+                    <img src="assets/yunkyung_kim_profile.jpeg" alt="Yunkyung Kim">
+                    <h3>Yunkyung Kim (김윤경)</h3>
+                    <p>President</p>
+                    <a href="https://www.linkedin.com/in/yunkyung-kim-ph-d-23a75320/" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="member">
+                    <img src="assets/jinwon_chung_profile.jpeg" alt="Jinwon Chung">
+                    <h3>Jinwon Chung (정진원)</h3>
+                    <a href="https://www.linkedin.com/in/jinwon-chung3/" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="member">
+                    <img src="assets/andy_park_profile.jpeg" alt="Andy Park">
+                    <h3>Andy Park (박형주)</h3>
+                    <a href="https://www.linkedin.com/in/robodreamer/" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="member">
+                    <img src="assets/jenna_hong_profile.jpeg" alt="Jenna Hong">
+                    <h3>Jenna Hong (홍제나)</h3>
+                    <a href="https://www.linkedin.com/in/jennahong21/" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="member">
+                    <img src="assets/seokwon_lee_profile.jpeg" alt="Seok-Won Lee">
+                    <h3>Seok-Won Lee (이석원)</h3>
+                    <a href="https://www.linkedin.com/in/seokwonlee/" target="_blank">LinkedIn Profile</a>
+                </div>
             </div>
-            <div class="member">
-                <img src="assets/jinwon_chung_profile.jpeg" alt="Jinwon Chung">
-                <h3>Jinwon Chung</h3>
-                <a href="https://www.linkedin.com/in/jinwon-chung3/" target="_blank">LinkedIn Profile</a>
+        </section>
+
+        <section id="sponsors">
+            <h2>Sponsors</h2>
+            <div class="sponsor">
+                <h3>Major Sponsor</h3>
+                <div class="sponsor-item">
+                    <h4>보스턴총영사관 (Korean Consulate General in Boston)</h4>
+                    <p>We are grateful for the support of the Korean Consulate General in Boston in organizing the RAINES Launching Event and providing us with the venue for the upcoming events.</p>
+                </div>
             </div>
-            <div class="member">
-                <img src="assets/andy_park_profile.jpeg" alt="Andy Park">
-                <h3>Andy Park</h3>
-                <a href="https://www.linkedin.com/in/robodreamer/" target="_blank">LinkedIn Profile</a>
+        </section>
+
+        <section id="become-sponsor">
+            <h2>Become a Sponsor</h2>
+            <div class="sponsorship-intro">
+                <p>
+                    Support the growth of the Korean Robotics & AI community in New England. We welcome various forms of sponsorship to help us achieve our mission.
+                    <br><em>(뉴잉글랜드 지역의 Korean Robotics & AI 커뮤니티 성장을 위해 여러 형태의 재정적 Sponsorship을 환영합니다.)</em>
+                </p>
             </div>
-            <div class="member">
-                <img src="assets/jenna_hong_profile.jpeg" alt="Jenna Hong">
-                <h3>Jenna Hong</h3>
-                <a href="https://www.linkedin.com/in/jennahong21/" target="_blank">LinkedIn Profile</a>
+
+            <h3>How Your Sponsorship Helps</h3>
+            <div class="sponsorship-details">
+                <div class="detail-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>Future Events</h4>
+                    <p>Meetups, Workshops, Demo Days</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Operational Costs</h4>
+                    <p>Venue, Logistics, Marketing, Refreshments</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-users"></i>
+                    <h4>Community Programs</h4>
+                    <p>Student Engagement, Guest Speaker Invitations</p>
+                </div>
             </div>
-            <div class="member">
-                <img src="assets/seokwon_lee_profile.jpeg" alt="Seok-Won Lee">
-                <h3>Seok-Won Lee</h3>
-                <a href="https://www.linkedin.com/in/seokwonlee/" target="_blank">LinkedIn Profile</a>
+
+            <h3>Sponsor Benefits</h3>
+            <div class="sponsorship-details">
+                <div class="detail-item">
+                    <i class="fas fa-microphone"></i>
+                    <h4>Speaking Sessions</h4>
+                    <p>Opportunity for a speaking session during our events.</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-eye"></i>
+                    <h4>Logo Exposure</h4>
+                    <p>On the RAINES homepage, event materials, and banners.</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-building"></i>
+                    <h4>Booth Space</h4>
+                    <p>Potential for booth space at future large-scale events.</p>
+                </div>
+            </div>
+
+            <h3>Ways to Contribute</h3>
+            <div class="contribution-options">
+                <div class="option-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <p><strong>Financial Sponsorship</strong> (One-time or Recurring)</p>
+                </div>
+                <div class="option-item">
+                    <i class="fas fa-gifts"></i>
+                    <p><strong>In-kind Support</strong> (e.g., Venue, Food, Equipment)</p>
+                </div>
+                <div class="option-item">
+                    <i class="fas fa-handshake"></i>
+                    <p><strong>Strategic Partnerships</strong> aligned with our mission</p>
+                </div>
+            </div>
+
+            <div class="sponsorship-contact">
+                <p>If you are interested, please feel free to contact us via email!</p>
+                <a href="mailto:ask.raines@gmail.com" class="contact-button">Contact Us</a>
             </div>
         </section>
 
@@ -342,12 +917,14 @@
             <div class="past-events">
                 <h3>Recent Events</h3>
                 <div class="event">
-                    <h4>RAINES Launching Event: Critical & Emerging Technology Cooperation in the US-Korea</h4>
+                    <h4>RAINES Launching Event: AI-Powered Robotics and Autonomous Driving Seminar</h4>
                     <p>Date: April 28, 2025<br>
                     Location: CIC Cambridge<br>
                     Invited Speakers: Dr. Haewon Park (MIT), Prof. Yoon Kim (MIT)</p>
                     <p>
                         This seminar, hosted by the Korean Consulate in Boston, brought together experts and enthusiasts to explore the future of AI-powered robotics and autonomous driving. Dr. Haewon Park shared insights on social robots, while Prof. Yoon Kim discussed large language models, sparking engaging conversations on emerging technologies. The event fostered US-Korea collaboration, offering a platform for networking, knowledge sharing, and building new connections in the Boston tech community.
+                        <br><br>
+                        <strong>Attendees:</strong> 49 total (35 from Industry, 14 from Academia).
                     </p>
                     <div style="display: flex; justify-content: center; align-items: center; background: #f8f8f8; padding: 30px 0;">
                         <img src="assets/main_image.png" alt="RAINES Event Photo" style="max-width: 90vw; max-height: 60vh; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.10);">
@@ -356,10 +933,52 @@
             </div>
             <div class="future-events">
                 <h3>Upcoming Events</h3>
-
+                <div class="event future-event">
+                    <h4>Seminar & Networking at the new Boston Consulate</h4>
+                    <p>Date: Mid-August 2025</p>
+                    <p>
+                        A seminar and networking event is planned at the newly relocated Boston Consulate General, with their support. More details to come!
+                        <br><em>(보스턴 총영사관 지원으로 새로 이전한 보스턴 총영사관에서 세미나 및 네트워킹 행사 예정)</em>
+                    </p>
+                    <div style="display: flex; justify-content: center; align-items: center; background: #f8f8f8; padding: 30px 0;">
+                        <img src="assets/upcoming_event_aug2025.png" alt="Boston Consulate General" style="max-width: 90vw; max-height: 60vh; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.10);">
+                    </div>
+                </div>
             </div>
         </section>
     </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact & Join RAINES</h3>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>문의: <a href="mailto:ask.raines@gmail.com">ask.raines@gmail.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-user-plus"></i>
+                    <span>회원가입신청: <a href="https://docs.google.com/forms/d/1YUxmG01pXDWe30loSrPkn1KBXrxGa9G661eqEq2q9zo/" target="_blank">Google Form</a></span>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/raines.boston" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.linkedin.com/groups/14694278/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RAINES - Robotics & AI New England Society. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
         function toggleTheme() {
