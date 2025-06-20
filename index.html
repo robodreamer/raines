@@ -718,6 +718,24 @@
         .dark .contact-button:hover {
             background: #E6E6FA;
         }
+        .event-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8f8f8;
+            padding: 30px 0;
+            margin: 20px 0;
+            transition: background 0.3s ease;
+        }
+        .dark .event-image-container {
+            background: #2c2c2c; /* A dark grey that complements the theme */
+        }
+        .event-image-container img {
+            max-width: 90vw;
+            max-height: 60vh;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        }
     </style>
 </head>
 <body>
@@ -926,8 +944,8 @@
                         <br><br>
                         <strong>Attendees:</strong> 49 total (35 from Industry, 14 from Academia).
                     </p>
-                    <div style="display: flex; justify-content: center; align-items: center; background: #f8f8f8; padding: 30px 0;">
-                        <img src="assets/main_image.png" alt="RAINES Event Photo" style="max-width: 90vw; max-height: 60vh; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.10);">
+                    <div class="event-image-container">
+                        <img src="assets/main_image.png" alt="RAINES Event Photo">
                     </div>
                 </div>
             </div>
@@ -940,8 +958,8 @@
                         A seminar and networking event is planned at the newly relocated Boston Consulate General, with their support. More details to come!
                         <br><em>(보스턴 총영사관 지원으로 새로 이전한 보스턴 총영사관에서 세미나 및 네트워킹 행사 예정)</em>
                     </p>
-                    <div style="display: flex; justify-content: center; align-items: center; background: #f8f8f8; padding: 30px 0;">
-                        <img src="assets/upcoming_event_aug2025.png" alt="Boston Consulate General" style="max-width: 90vw; max-height: 60vh; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.10);">
+                    <div class="event-image-container">
+                        <img src="assets/upcoming_event_aug2025.png" alt="Boston Consulate General">
                     </div>
                 </div>
             </div>
