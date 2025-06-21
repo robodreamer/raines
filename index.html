@@ -123,7 +123,7 @@
             left: 0;
             width: 100%;
             background: linear-gradient(90deg, #E6E6FA, #D8BFD8);
-            padding: 15px 0;
+            padding: 10px 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             display: flex;
@@ -134,28 +134,74 @@
         .dark nav {
             background: linear-gradient(90deg, #4B0082, #6A5ACD);
         }
-        nav a {
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .nav-links li {
+            position: relative;
+        }
+        .nav-links a {
             color: #333;
-            margin: 0 20px;
+            margin: 0 15px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1em;
-            padding: 8px 16px;
+            padding: 12px 16px;
             border-radius: 25px;
             transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+            display: block;
         }
-        .dark nav a {
+        .dark .nav-links a {
             color: #e0e0e0;
         }
-        nav a:hover {
+        .nav-links a:hover {
             background-color: rgba(0, 0, 0, 0.1);
             transform: translateY(-2px);
         }
-        .dark nav a:hover {
+        .dark .nav-links a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-        nav a:active {
-            transform: translateY(1px);
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .dark .dropdown-content {
+            background-color: #444;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            margin: 0;
+            border-radius: 0;
+        }
+        .dark .dropdown-content a {
+            color: #f1f1f1;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dark .dropdown-content a:hover {
+            background-color: #555;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown a i {
+            margin-left: 5px;
+            font-size: 0.8em;
         }
         .theme-toggle {
             background: #D8BFD8;
@@ -306,7 +352,26 @@
           }
           nav {
             flex-direction: column;
-            padding: 10px 0;
+          }
+          .nav-links {
+            flex-direction: column;
+            width: 100%;
+          }
+          .nav-links li {
+            width: 100%;
+            text-align: center;
+          }
+          .dropdown-content {
+            position: static;
+            display: none; /* Keep it hidden on mobile until clicked, more JS needed for that */
+            box-shadow: none;
+            background-color: rgba(0,0,0,0.05);
+          }
+          .dropdown:hover .dropdown-content {
+            display: block; /* Simplest mobile solution: show on hover */
+          }
+          .dark .dropdown-content {
+            background-color: rgba(255,255,255,0.1);
           }
           section {
             padding: 10px;
@@ -478,7 +543,7 @@
         }
 
         /* About Us Section */
-        #about-us p {
+        #member-status p {
             font-size: 1.2em;
             line-height: 1.6;
             text-align: center;
@@ -599,24 +664,24 @@
         }
 
         /* Become a Sponsor Section */
-        #become-sponsor {
+        #sponsor-us {
             background: rgba(230, 230, 250, 0.3);
             border-top: 1px solid rgba(106, 90, 205, 0.1);
             border-bottom: 1px solid rgba(106, 90, 205, 0.1);
         }
-        .dark #become-sponsor {
+        .dark #sponsor-us {
             background: rgba(75, 0, 130, 0.15);
             border-top-color: rgba(216, 191, 216, 0.15);
             border-bottom-color: rgba(216, 191, 216, 0.15);
         }
-        #become-sponsor h3 {
+        #sponsor-us h3 {
             text-align: center;
             color: #6A5ACD;
             margin-top: 50px;
             margin-bottom: 30px;
             font-size: 1.6em;
         }
-        .dark #become-sponsor h3 {
+        .dark #sponsor-us h3 {
             color: #D8BFD8;
         }
         .sponsorship-intro {
@@ -746,25 +811,44 @@
     </div>
     <div class="overlay">
         <nav>
-            <a href="#intro">Introduction</a>
-            <a href="#about-us">About Us</a>
-            <a href="#benefits">Benefits</a>
-            <a href="#committee">Committee</a>
-            <a href="#sponsors">Sponsors</a>
-            <a href="#become-sponsor">Sponsorship</a>
-            <a href="#events">Events</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li class="dropdown">
+                    <a href="#our-story" class="dropbtn">About Us <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#our-story">Our Story</a>
+                        <a href="#member-status">Member Status</a>
+                        <a href="#team">Meet the Team</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#events" class="dropbtn">Events <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#upcoming-events">Upcoming Events</a>
+                        <a href="#past-events">Past Events</a>
+                    </div>
+                </li>
+                <li><a href="#become-member">Become a Member</a></li>
+                <li class="dropdown">
+                    <a href="#our-sponsors" class="dropbtn">Sponsors <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#our-sponsors">Our Sponsors</a>
+                        <a href="#sponsor-us">Become a Sponsor</a>
+                    </div>
+                </li>
+            </ul>
             <button class="theme-toggle" onclick="toggleTheme()">Switch to Dark Mode</button>
         </nav>
 
-        <section id="intro" class="intro">
-            <h2>Welcome to RAINES</h2>
+        <section id="our-story" class="intro">
+            <h2>Our Story</h2>
             <p>
                 The Robotics & AI New England Society (RAINES) is a vibrant community of Korean scientists, engineers, and entrepreneurs based around Boston. Our mission is to foster collaboration, innovation, and growth in the fields of robotics and artificial intelligence. Join us to connect, learn, and contribute to groundbreaking advancements in technology.
             </p>
         </section>
 
-        <section id="about-us">
-            <h2>About Us</h2>
+        <section id="member-status">
+            <h2>Our Members</h2>
             <p>As of June 2025, RAINES has grown to include 32 registered members, creating a diverse and talented community.</p>
             <div class="member-distribution">
                 <div class="distribution-item">
@@ -785,8 +869,8 @@
             </div>
         </section>
 
-        <section id="benefits">
-            <h2>Member Benefits</h2>
+        <section id="become-member">
+            <h2>Become a Member</h2>
             <div class="benefits-container">
                 <div class="benefit-item">
                     <div class="benefit-icon">
@@ -818,7 +902,7 @@
             </div>
         </section>
 
-        <section id="committee">
+        <section id="team">
             <h2>Committee Members</h2>
             <div class="committee">
                 <div class="member">
@@ -850,7 +934,7 @@
             </div>
         </section>
 
-        <section id="sponsors">
+        <section id="our-sponsors">
             <h2>Sponsors</h2>
             <div class="sponsor">
                 <h3>Major Sponsor</h3>
@@ -861,7 +945,7 @@
             </div>
         </section>
 
-        <section id="become-sponsor">
+        <section id="sponsor-us">
             <h2>Become a Sponsor</h2>
             <div class="sponsorship-intro">
                 <p>
@@ -932,7 +1016,7 @@
 
         <section id="events">
             <h2>Events</h2>
-            <div class="past-events">
+            <div id="past-events" class="past-events">
                 <h3>Recent Events</h3>
                 <div class="event">
                     <h4>RAINES Launching Event: AI-Powered Robotics and Autonomous Driving Seminar</h4>
@@ -949,7 +1033,7 @@
                     </div>
                 </div>
             </div>
-            <div class="future-events">
+            <div id="upcoming-events" class="future-events">
                 <h3>Upcoming Events</h3>
                 <div class="event future-event">
                     <h4>Seminar & Networking at the new Boston Consulate</h4>
