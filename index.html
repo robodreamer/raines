@@ -207,11 +207,14 @@
             background: #D8BFD8;
             border: none;
             padding: 8px 16px;
-            border-radius: 20px;
+            border-radius: 50%;
             cursor: pointer;
-            font-weight: 600;
             margin-left: 20px;
-            transition: background 0.3s ease, color 0.3s ease;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, color 0.3s;
         }
         .dark .theme-toggle {
             background: #6A5ACD;
@@ -906,7 +909,7 @@
                     </div>
                 </li>
             </ul>
-            <button class="theme-toggle" onclick="toggleTheme()">Switch to Dark Mode</button>
+            <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
         </nav>
 
         <section id="our-story" class="intro">
@@ -1223,9 +1226,29 @@
 
         function toggleTheme() {
             document.body.classList.toggle('dark');
-            const button = document.querySelector('.theme-toggle');
-            button.textContent = document.body.classList.contains('dark') ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+            const button = document.getElementById('themeToggleBtn');
+            const icon = button.querySelector('i');
+            if (document.body.classList.contains('dark')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
         }
+
+        // Set initial icon on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('themeToggleBtn');
+            const icon = button.querySelector('i');
+            if (document.body.classList.contains('dark')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
 
         function addToCalendar(title, start, end, location) {
             const event = {
