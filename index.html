@@ -792,25 +792,30 @@
         .contact-button {
             display: inline-block;
             background: #6A5ACD;
-            color: white;
+            color: white !important;
             padding: 12px 30px;
             border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
+            text-decoration: none !important;
+            font-weight: 700;
             font-size: 1.1em;
             transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
         .dark .contact-button {
-            background: #D8BFD8;
-            color: #333;
+            background: #6A5ACD;
+            color: white !important;
+            border: 2px solid #D8BFD8;
         }
         .contact-button:hover {
             background: #4B0082;
+            color: white !important;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(106, 90, 205, 0.4);
         }
         .dark .contact-button:hover {
-            background: #E6E6FA;
+            background: #4B0082;
+            color: white !important;
+            border-color: #E6E6FA;
         }
         .event-image-container {
             display: flex;
