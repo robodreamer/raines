@@ -339,6 +339,32 @@
         .dark .sponsor-item p {
             color: #ccc;
         }
+        .sponsor-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .sponsor-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .sponsor-header h4 {
+            margin: 0;
+            flex: 1;
+        }
+        .english-name {
+            font-size: 0.9em;
+            font-weight: normal;
+            color: #666;
+            display: block;
+            margin-top: 5px;
+        }
+        .dark .english-name {
+            color: #aaa;
+        }
         @media (max-width: 600px) {
           .hero {
             height: 40vh;
@@ -1015,10 +1041,27 @@
         <section id="our-sponsors">
             <h2>Sponsors</h2>
             <div class="sponsor">
-                <h3>Major Sponsor</h3>
+                <h3>Our Sponsors</h3>
                 <div class="sponsor-item">
-                    <h4>주보스턴 대한민국 총영사관 (Consulate General of the Republic of Korea in Boston)</h4>
+                    <div class="sponsor-header">
+                        <img src="assets/Sponsor_logos/KoreanConsulateBoston.png" alt="Korean Consulate Boston Logo" class="sponsor-logo">
+                        <h4>주보스턴대한민국총영사관<br><span class="english-name">Consulate General of the Republic of Korea in Boston</span></h4>
+                    </div>
                     <p>We are grateful for the support of the Korean Consulate in Boston, which has been instrumental in fostering US-Korea collaboration in critical and emerging technologies.<em class="translation">핵심적인 새로운 기술 분야에서의 한미 협력 증진에 중요한 역할을 해주신 주보스턴 대한민국 총영사관의 지원에 감사드립니다.</em></p>
+                </div>
+                <div class="sponsor-item">
+                    <div class="sponsor-header">
+                        <img src="assets/Sponsor_logos/KEIT.png" alt="KEIT Logo" class="sponsor-logo">
+                        <h4>한국산업기술기획평가원(KEIT)<br><span class="english-name">Korea Evaluation Institute of Industrial Technology</span></h4>
+                    </div>
+                    <p>KEIT supports the advancement of industrial technology and innovation in Korea, fostering collaboration between industry and academia in robotics and AI fields.<em class="translation">KEIT는 한국의 산업기술 발전과 혁신을 지원하며, 로보틱스와 AI 분야에서 산학협력을 촉진합니다.</em></p>
+                </div>
+                <div class="sponsor-item">
+                    <div class="sponsor-header">
+                        <img src="assets/Sponsor_logos/RAINBOW.png" alt="Rainbow Robotics Logo" class="sponsor-logo">
+                        <h4>레인보우로보틱스<br><span class="english-name">Rainbow Robotics</span></h4>
+                    </div>
+                    <p>Rainbow Robotics is a leading robotics company developing innovative humanoid robots and collaborative robotics solutions for various industries.<em class="translation">레인보우로보틱스는 다양한 산업을 위한 혁신적인 휴머노이드 로봇과 협동 로봇 솔루션을 개발하는 선도적인 로보틱스 회사입니다.</em></p>
                 </div>
             </div>
         </section>
