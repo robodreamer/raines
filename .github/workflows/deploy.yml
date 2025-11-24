@@ -26,6 +26,17 @@ jobs:
         with:
           lfs: true  # This pulls LFS files automatically
 
+      - name: Setup Git LFS
+        run: |
+          git lfs install
+          git lfs pull
+
+      - name: Verify LFS files
+        run: |
+          echo "Checking if LFS files are pulled..."
+          file assets/event_112325/poster_111725.jpg || echo "File check failed"
+          ls -lh assets/event_112325/*.jpg | head -3
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
@@ -33,7 +44,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
-
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
