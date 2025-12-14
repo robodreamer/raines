@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAINES 2025 Year in Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @media print {
+            @page {
+                size: letter;
+                margin: 0.5in;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #6A5ACD;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #6A5ACD;
+            border-bottom: 3px solid #6A5ACD;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #6A5ACD;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            background: #f8f8f8;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #6A5ACD;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #6A5ACD;
+            border: 3px solid #fff;
+        }
+
+        .timeline-date {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #6A5ACD;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .timeline-details {
+            margin-bottom: 20px;
+        }
+
+        .timeline-details p {
+            margin-bottom: 10px;
+        }
+
+        .event-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .event-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: 700;
+            color: #6A5ACD;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .member-card {
+            text-align: center;
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .member-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .member-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .member-card p {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .member-card a {
+            color: #6A5ACD;
+            text-decoration: none;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .member-card a:hover {
+            text-decoration: underline;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .benefit-card {
+            background: #f8f8f8;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 4px solid #6A5ACD;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .benefit-icon {
+            font-size: 2em;
+            color: #6A5ACD;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            font-size: 1.3em;
+            color: #6A5ACD;
+            margin-bottom: 10px;
+        }
+
+        .benefit-content p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .sponsorship-section {
+            background: rgba(230, 230, 250, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .sponsorship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .sponsorship-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .sponsorship-item i {
+            font-size: 2em;
+            color: #6A5ACD;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .sponsorship-item h4 {
+            font-size: 1.1em;
+            color: #6A5ACD;
+            margin-bottom: 10px;
+        }
+
+        .sponsorship-item p {
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f8f8;
+            border-radius: 10px;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: #6A5ACD;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .sponsor-card {
+            background: #f8f8f8;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #6A5ACD;
+        }
+
+        .sponsor-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .sponsor-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .sponsor-card h4 {
+            font-size: 1.2em;
+            color: #6A5ACD;
+            margin: 0;
+        }
+
+        .sponsor-card p {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 10px;
+        }
+
+        .chart-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .intro-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 2px solid #6A5ACD;
+            color: #666;
+        }
+
+        @media print {
+            .event-images {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .committee-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .sponsorship-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="assets/raines_logo_4.png" alt="RAINES Logo">
+        <h1>RAINES 2025 Year in Review</h1>
+        <p>Korean Robotics & AI New England Society</p>
+        <p>Innovating the Future in New England</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Our Story</h2>
+        <p class="intro-text">
+            Founded in April 2025, RAINES is a community for Korean professionals working and researching in the Robotics and AI fields throughout the New England area. Through research seminars, career seminars, and networking events, we aim to expand our members' professional networks and foster innovation and growth in the field.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">2025 Highlights</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">98</span>
+                <span class="stat-label">Total Members</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">58</span>
+                <span class="stat-label">Industry Professionals</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">40</span>
+                <span class="stat-label">Academia Members</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Major Events</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Member Demographics</h2>
+        <div class="chart-container">
+            <img src="assets/member_demographics_Dec2025_light.png" alt="RAINES Member Demographics Chart">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">2025 Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">April 28, 2025</div>
+                <div class="timeline-title">RAINES Launching Event: AI-Powered Robotics and Autonomous Driving Seminar</div>
+                <div class="timeline-details">
+                    <p><strong>Location:</strong> CIC Cambridge</p>
+                    <p><strong>Speakers:</strong> Dr. Haewon Park (MIT Media Lab), Prof. Yoon Kim (MIT EECS)</p>
+                    <p><strong>Attendees:</strong> 49 total (35 from Industry, 14 from Academia)</p>
+                    <p>This seminar, hosted by the Korean Consulate in Boston, brought together experts and enthusiasts to explore the future of AI-powered robotics and autonomous driving. Dr. Haewon Park shared insights on social robots, while Prof. Yoon Kim discussed large language models, sparking engaging conversations on emerging technologies. The event fostered US-Korea collaboration, offering a platform for networking, knowledge sharing, and building new connections in the Boston tech community.</p>
+                </div>
+                <div class="event-images">
+                    <img src="assets/event_042825/launch_event_042825_photo_1.png" alt="Launch Event Photo 1">
+                    <img src="assets/event_042825/launch_event_042825_photo_2.png" alt="Launch Event Photo 2">
+                    <img src="assets/event_042825/launch_event_042825_photo_3.png" alt="Launch Event Photo 3">
+                    <img src="assets/event_042825/launch_event_042825_photo_4.png" alt="Launch Event Photo 4">
+                    <img src="assets/event_042825/launch_event_042825_photo_5.png" alt="Launch Event Photo 5">
+                    <img src="assets/event_042825/launch_event_042825_photo_6.png" alt="Launch Event Photo 6">
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">August 21, 2025</div>
+                <div class="timeline-title">RAINES Summer Seminar: Recent Advances in AI Problem Solving</div>
+                <div class="timeline-details">
+                    <p><strong>Location:</strong> Korean Consulate General in Boston</p>
+                    <p><strong>Speakers:</strong> Dr. Jungkoo Kang (IBM Research), Prof. Junehyuk Jung (Brown University & Google DeepMind)</p>
+                    <p><strong>Attendees:</strong> 55 total (sold out capacity)</p>
+                    <p>On August 21st, we successfully concluded the K-RAINES Summer Seminar at the newly renovated Boston Consulate General! With a sold-out capacity of 55 attendees, this seminar was conducted with tremendous enthusiasm. Dr. Jungkoo Kang from IBM Research shared insights on LLM-based problem solving and workflow generation, while Prof. Junehyuk Jung from Brown University & Google DeepMind presented research on automated mathematical reasoning. We had meaningful time with insights from two speakers at the forefront of AI research, along with networking and dinner with participants. Thanks to the various prizes provided by the Boston Consulate General, we also enjoyed a fun raffle time, and most participants were able to take home a gift. We thank the Consulate General of the Republic of Korea in Boston, Korea Evaluation Institute of Industrial Technology (KEIT), Rainbow Robotics, and all attendees who joined us for this seminar!</p>
+                </div>
+                <div class="event-images">
+                    <img src="assets/poster_event_aug_2025.png" alt="August Event Poster">
+                    <img src="assets/event_082125/540735718_1185508406942466_526723454474490573_n.jpg" alt="August Event Photo 1">
+                    <img src="assets/event_082125/541448939_1185508400275800_5590498429418958780_n.jpg" alt="August Event Photo 2">
+                    <img src="assets/event_082125/542149797_1185508403609133_2570887981030982218_n.jpg" alt="August Event Photo 3">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-54-55 003.jpeg" alt="August Event Photo 4">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-02 006.jpeg" alt="August Event Photo 5">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-07 008.jpeg" alt="August Event Photo 6">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-12 010.jpeg" alt="August Event Photo 7">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-16 012.jpeg" alt="August Event Photo 8">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-22 015.jpeg" alt="August Event Photo 9">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-33 019.jpeg" alt="August Event Photo 10">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-35 021.jpeg" alt="August Event Photo 11">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-37 022.jpeg" alt="August Event Photo 12">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-50 029.jpeg" alt="August Event Photo 13">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-58-43 001.jpeg" alt="August Event Photo 14">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-58-46 003.jpeg" alt="August Event Photo 15">
+                    <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-59-00 009.jpeg" alt="August Event Photo 16">
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">November 17, 2025</div>
+                <div class="timeline-title">K-RAINES Fall Event: The Physical AI Era: Korea-US New Technology Cooperation</div>
+                <div class="timeline-details">
+                    <p><strong>Location:</strong> CIC Venture Café (1 Broadway, Cambridge)</p>
+                    <p><strong>Date & Time:</strong> November 17, 2025 (Monday) 5:30 PM - 8:00 PM</p>
+                    <p><strong>Speakers:</strong> CEO Lee Gil-woo (Zordi), Prof. Benjamin Marlin (University of Massachusetts Amherst), Prof. Kim Chang-ik (KAIST), Advisor HK Kwon (권혁민, Carbon Black), Director Lee Hoon-bae (이훈배, TIPA)</p>
+                    <p><strong>Attendees:</strong> 48 people attended</p>
+                    <p>On November 17th, K-RAINES successfully hosted its fall networking event, "The Physical AI Era: Korea-US New Technology Cooperation," at CIC Venture Café in Cambridge. This special event, sponsored by the Consulate General of the Republic of Korea in Boston, Overseas Koreans Agency, TIPA (Korea Technology and Information Promotion Agency for SMEs), Carbon Black, and Carbon Six, brought together 48 attendees to explore the exciting frontier of Physical AI. The event began with sponsor speeches, starting with Deputy Consul General Kwak Jung-yeol (곽정열) from the Consulate General of the Republic of Korea in Boston, followed by Director Lee Hoon-bae (이훈배) from TIPA and Advisor HK Kwon (권혁민) representing Carbon Black. Three distinguished speakers then shared their insights: CEO Lee Gil-woo from Zordi, Prof. Benjamin Marlin from University of Massachusetts Amherst, and Prof. Kim Chang-ik from KAIST. The event featured engaging presentations and Q&A sessions, followed by a panel discussion with all speakers, and concluded with networking and dinner, fostering meaningful connections and collaboration between Korea and the US in advancing AI technologies. This event marked a wonderful conclusion to the year, bringing together the community to share knowledge and build lasting relationships in the Boston tech ecosystem.</p>
+                </div>
+                <div class="event-images">
+                    <img src="assets/event_112325/poster_111725.jpg" alt="November Event Poster 1">
+                    <img src="assets/event_112325/poster_physical_ai_111725.jpeg" alt="November Event Poster 2">
+                    <img src="assets/event_112325/IMG_2715.jpeg" alt="November Event Photo 1">
+                    <img src="assets/event_112325/IMG_2717.jpeg" alt="November Event Photo 2">
+                    <img src="assets/event_112325/IMG_2720.jpeg" alt="November Event Photo 3">
+                    <img src="assets/event_112325/IMG_2722.jpeg" alt="November Event Photo 4">
+                    <img src="assets/event_112325/IMG_2723.jpeg" alt="November Event Photo 5">
+                    <img src="assets/event_112325/IMG_2725.jpeg" alt="November Event Photo 6">
+                    <img src="assets/event_112325/IMG_2728.jpeg" alt="November Event Photo 7">
+                    <img src="assets/event_112325/IMG_2729.jpeg" alt="November Event Photo 8">
+                    <img src="assets/event_112325/IMG_2730.jpeg" alt="November Event Photo 9">
+                    <img src="assets/event_112325/IMG_2731.jpeg" alt="November Event Photo 10">
+                    <img src="assets/event_112325/IMG_2732.jpeg" alt="November Event Photo 11">
+                    <img src="assets/event_112325/IMG_2733.jpeg" alt="November Event Photo 12">
+                    <img src="assets/event_112325/IMG_2734.jpeg" alt="November Event Photo 13">
+                    <img src="assets/event_112325/IMG_2735.jpeg" alt="November Event Photo 14">
+                    <img src="assets/event_112325/IMG_2736.jpeg" alt="November Event Photo 15">
+                    <img src="assets/event_112325/IMG_2737.jpeg" alt="November Event Photo 16">
+                    <img src="assets/event_112325/IMG_2738.jpeg" alt="November Event Photo 17">
+                    <img src="assets/event_112325/IMG_2739.jpeg" alt="November Event Photo 18">
+                    <img src="assets/event_112325/IMG_2740.jpeg" alt="November Event Photo 19">
+                    <img src="assets/event_112325/IMG_2741.jpeg" alt="November Event Photo 20">
+                    <img src="assets/event_112325/IMG_2744.jpeg" alt="November Event Photo 21">
+                    <img src="assets/event_112325/IMG_2747.jpeg" alt="November Event Photo 22">
+                    <img src="assets/event_112325/IMG_2748.jpeg" alt="November Event Photo 23">
+                    <img src="assets/event_112325/IMG_2750.jpeg" alt="November Event Photo 24">
+                    <img src="assets/event_112325/IMG_2752.jpeg" alt="November Event Photo 25">
+                    <img src="assets/event_112325/IMG_2754.jpeg" alt="November Event Photo 26">
+                    <img src="assets/event_112325/IMG_2756.jpeg" alt="November Event Photo 27">
+                    <img src="assets/event_112325/IMG_2757.jpeg" alt="November Event Photo 28">
+                    <img src="assets/event_112325/IMG_2760.jpeg" alt="November Event Photo 29">
+                    <img src="assets/event_112325/IMG_2761.jpeg" alt="November Event Photo 30">
+                    <img src="assets/event_112325/IMG_2762.jpeg" alt="November Event Photo 31">
+                    <img src="assets/event_112325/IMG_2763.jpeg" alt="November Event Photo 32">
+                    <img src="assets/event_112325/IMG_2764.jpeg" alt="November Event Photo 33">
+                    <img src="assets/event_112325/IMG_2765.jpeg" alt="November Event Photo 34">
+                    <img src="assets/event_112325/IMG_2766.jpeg" alt="November Event Photo 35">
+                    <img src="assets/event_112325/IMG_2767.jpeg" alt="November Event Photo 36">
+                    <img src="assets/event_112325/IMG_2768.jpeg" alt="November Event Photo 37">
+                    <img src="assets/event_112325/IMG_2769.jpeg" alt="November Event Photo 38">
+                    <img src="assets/event_112325/IMG_2771.jpeg" alt="November Event Photo 39">
+                    <img src="assets/event_112325/IMG_2772.jpeg" alt="November Event Photo 40">
+                    <img src="assets/event_112325/IMG_2773.jpeg" alt="November Event Photo 41">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Committee Members</h2>
+        <div class="committee-grid">
+            <div class="member-card">
+                <img src="assets/yunkyung_kim_profile.jpeg" alt="Yunkyung Kim">
+                <h3>Yunkyung Kim<br>(김윤경)</h3>
+                <p>President</p>
+                <a href="https://www.linkedin.com/in/yunkyung-kim-ph-d-23a75320/" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="member-card">
+                <img src="assets/jinwon_chung_profile.jpeg" alt="Jinwon Chung">
+                <h3>Jinwon Chung<br>(정진원)</h3>
+                <a href="https://www.linkedin.com/in/jinwon-chung3/" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="member-card">
+                <img src="assets/andy_park_profile.jpeg" alt="Andy Park">
+                <h3>Andy Park<br>(박형주)</h3>
+                <a href="https://www.linkedin.com/in/robodreamer/" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="member-card">
+                <img src="assets/jenna_hong_profile.jpeg" alt="Jenna Hong">
+                <h3>Jenna Hong<br>(홍제나)</h3>
+                <a href="https://www.linkedin.com/in/jennahong21/" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="member-card">
+                <img src="assets/seokwon_lee_profile.jpeg" alt="Seok-Won Lee">
+                <h3>Seok-Won Lee<br>(이석원)</h3>
+                <a href="https://www.linkedin.com/in/seokwonlee/" target="_blank">LinkedIn Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Become a Member</h2>
+        <p class="intro-text">
+            Join RAINES to connect with Korean professionals in Robotics and AI throughout New England. Membership provides exclusive access to networking opportunities, events, and resources.
+        </p>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="benefit-content">
+                    <h3>Exclusive Chat Room</h3>
+                    <p>Invitation to an open chat room for networking with Robotics and AI professionals in the New England area.</p>
+                </div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="benefit-content">
+                    <h3>Priority Event Access</h3>
+                    <p>Receive priority invitations to all events hosted by RAINES, ensuring you never miss out.</p>
+                </div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="benefit-content">
+                    <h3>Event & News Updates</h3>
+                    <p>Stay informed with the latest news and updates on Robotics and AI events in New England and beyond.</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-info">
+            <p>Ready to join our community?</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOBuRAT8xvrYaeE_vkbUU2W0zKPcKxu4MjyCWV4lai9oAGLg/viewform?pli=1" target="_blank" class="contact-button">Join RAINES Now</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Our Sponsors</h2>
+        <div class="sponsors-grid">
+            <div class="sponsor-card">
+                <div class="sponsor-header">
+                    <img src="assets/Sponsor_logos/KoreanConsulateBoston.png" alt="Korean Consulate Boston Logo" class="sponsor-logo">
+                    <h4>주보스턴대한민국총영사관<br><small>Consulate General of the Republic of Korea in Boston</small></h4>
+                </div>
+                <p>We are grateful for the support of the Korean Consulate in Boston, which has been instrumental in fostering US-Korea collaboration in critical and emerging technologies.</p>
+            </div>
+            <div class="sponsor-card">
+                <div class="sponsor-header">
+                    <img src="assets/Sponsor_logos/KEIT.png" alt="KEIT Logo" class="sponsor-logo">
+                    <h4>한국산업기술기획평가원(KEIT)<br><small>Korea Evaluation Institute of Industrial Technology</small></h4>
+                </div>
+                <p>KEIT supports the advancement of industrial technology and innovation in Korea, fostering collaboration between industry and academia in robotics and AI fields.</p>
+            </div>
+            <div class="sponsor-card">
+                <div class="sponsor-header">
+                    <img src="assets/Sponsor_logos/RAINBOW.png" alt="Rainbow Robotics Logo" class="sponsor-logo">
+                    <h4>레인보우로보틱스<br><small>Rainbow Robotics</small></h4>
+                </div>
+                <p>Rainbow Robotics is a leading robotics company developing innovative humanoid robots and collaborative robotics solutions for various industries.</p>
+            </div>
+            <div class="sponsor-card">
+                <div class="sponsor-header">
+                    <img src="assets/Sponsor_logos/OverseasKoreansAgency.png" alt="Overseas Koreans Agency Logo" class="sponsor-logo">
+                    <h4>재외동포청<br><small>Overseas Koreans Agency</small></h4>
+                </div>
+                <p>The Overseas Koreans Agency supports Korean diaspora communities worldwide, promoting cultural exchange and strengthening connections between Korea and overseas Koreans in various fields including technology and innovation.</p>
+            </div>
+            <div class="sponsor-card">
+                <div class="sponsor-header">
+                    <img src="assets/Sponsor_logos/tipa_2.png" alt="TIPA Logo" class="sponsor-logo">
+                    <h4>중소기업기술정보진흥원(TIPA)<br><small>Korea Technology and Information Promotion Agency for SMEs</small></h4>
+                </div>
+                <p>TIPA supports small and medium enterprises in Korea by providing technology and information services, fostering innovation, and promoting technological advancement in various industries including robotics and AI.</p>
+            </div>
+            <div class="sponsor-card">
+                <div class="sponsor-header">
+                    <img src="assets/Sponsor_logos/futureplay.png" alt="Future Play Logo" class="sponsor-logo">
+                    <h4>Future Play</h4>
+                </div>
+                <p>Future Play is a Korean venture capital and accelerator founded in 2014, specializing in early-stage investments in deep tech startups. They have invested in over 55 deep tech startups, with approximately one-third being US-based companies.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Become a Sponsor</h2>
+        <div class="sponsorship-section">
+            <p class="intro-text">
+                Support the growth of the Korean Robotics & AI community in New England. We welcome various forms of sponsorship to help us achieve our mission.
+            </p>
+
+            <h3 style="color: #6A5ACD; margin-top: 30px; margin-bottom: 20px;">How Your Sponsorship Helps</h3>
+            <div class="sponsorship-grid">
+                <div class="sponsorship-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>Future Events</h4>
+                    <p>Meetups, Workshops, Demo Days</p>
+                </div>
+                <div class="sponsorship-item">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Operational Costs</h4>
+                    <p>Venue, Logistics, Marketing, Refreshments</p>
+                </div>
+                <div class="sponsorship-item">
+                    <i class="fas fa-users"></i>
+                    <h4>Community Programs</h4>
+                    <p>Student Engagement, Guest Speaker Invitations</p>
+                </div>
+            </div>
+
+            <h3 style="color: #6A5ACD; margin-top: 30px; margin-bottom: 20px;">Sponsor Benefits</h3>
+            <div class="sponsorship-grid">
+                <div class="sponsorship-item">
+                    <i class="fas fa-microphone"></i>
+                    <h4>Speaking Sessions</h4>
+                    <p>Opportunity for a speaking session during our events</p>
+                </div>
+                <div class="sponsorship-item">
+                    <i class="fas fa-eye"></i>
+                    <h4>Logo Exposure</h4>
+                    <p>On the RAINES homepage, event materials, and banners</p>
+                </div>
+                <div class="sponsorship-item">
+                    <i class="fas fa-building"></i>
+                    <h4>Booth Space</h4>
+                    <p>Potential for booth space at future large-scale events</p>
+                </div>
+            </div>
+
+            <h3 style="color: #6A5ACD; margin-top: 30px; margin-bottom: 20px;">Ways to Contribute</h3>
+            <div class="sponsorship-grid">
+                <div class="sponsorship-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h4>Financial Sponsorship</h4>
+                    <p>One-time or Recurring</p>
+                </div>
+                <div class="sponsorship-item">
+                    <i class="fas fa-gifts"></i>
+                    <h4>In-kind Support</h4>
+                    <p>Venue, Food, Equipment</p>
+                </div>
+                <div class="sponsorship-item">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Strategic Partnerships</h4>
+                    <p>Aligned with our mission</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <p>If you are interested, please feel free to contact us via email!</p>
+                <a href="mailto:ask.raines@gmail.com" class="contact-button">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>RAINES - Robotics & AI New England Society</strong></p>
+        <p>Email: ask.raines@gmail.com | © 2025 All rights reserved</p>
+    </div>
+</body>
+</html>
