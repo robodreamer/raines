@@ -307,6 +307,46 @@
         .dark .sponsor h3 {
             color: #D8BFD8;
         }
+        .sponsor-tier {
+            margin-bottom: 40px;
+        }
+        .sponsor-tier-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .sponsor-tier.platinum .sponsor-tier-title {
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #E8E8E8 0%, #C0C0C0 25%, #E8E8E8 50%, #A8A8A8 75%, #E8E8E8 100%);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(255,255,255,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .sponsor-tier.gold .sponsor-tier-title {
+            color: #FFD700;
+            background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .sponsor-tier.silver .sponsor-tier-title {
+            color: #C0C0C0;
+            background: linear-gradient(135deg, #A8A8A8 0%, #808080 100%);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .dark .sponsor-tier.platinum .sponsor-tier-title {
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #E8E8E8 0%, #C0C0C0 25%, #E8E8E8 50%, #A8A8A8 75%, #E8E8E8 100%);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 0 0 15px rgba(255,255,255,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.5), 0 0 20px rgba(232, 232, 232, 0.3);
+        }
+        .dark .sponsor-tier.gold .sponsor-tier-title {
+            color: #FFD700;
+        }
+        .dark .sponsor-tier.silver .sponsor-tier-title {
+            color: #C0C0C0;
+        }
         .sponsor-item {
             background: rgba(216, 191, 216, 0.1);
             padding: 25px;
@@ -315,9 +355,38 @@
             margin-bottom: 20px;
             transition: all 0.3s ease;
         }
+        .sponsor-tier.platinum .sponsor-item {
+            background: linear-gradient(90deg, rgba(232, 232, 232, 0.2) 0%, rgba(192, 192, 192, 0.15) 50%, rgba(232, 232, 232, 0.2) 100%);
+            border-left-color: #E8E8E8;
+            border-left-width: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.2);
+            border-image: linear-gradient(180deg, #E8E8E8, #C0C0C0, #E8E8E8) 1;
+        }
+        .sponsor-tier.gold .sponsor-item {
+            background: rgba(255, 215, 0, 0.15);
+            border-left-color: #FFD700;
+            border-left-width: 5px;
+        }
+        .sponsor-tier.silver .sponsor-item {
+            background: rgba(192, 192, 192, 0.1);
+            border-left-color: #C0C0C0;
+        }
         .dark .sponsor-item {
             background: rgba(106, 90, 205, 0.1);
             border-left-color: #D8BFD8;
+        }
+        .dark .sponsor-tier.platinum .sponsor-item {
+            background: linear-gradient(90deg, rgba(232, 232, 232, 0.25) 0%, rgba(192, 192, 192, 0.2) 50%, rgba(232, 232, 232, 0.25) 100%);
+            border-left-color: #E8E8E8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15), 0 0 15px rgba(232, 232, 232, 0.2);
+        }
+        .dark .sponsor-tier.gold .sponsor-item {
+            background: rgba(255, 215, 0, 0.2);
+            border-left-color: #FFD700;
+        }
+        .dark .sponsor-tier.silver .sponsor-item {
+            background: rgba(192, 192, 192, 0.15);
+            border-left-color: #C0C0C0;
         }
         .sponsor-item:hover {
             transform: translateY(-2px);
@@ -350,6 +419,12 @@
             height: 150px;
             object-fit: contain;
             flex-shrink: 0;
+            display: block;
+        }
+        .sponsor-tier.platinum .sponsor-logo {
+            display: block;
+            visibility: visible;
+            opacity: 1;
         }
         .sponsor-logo-wrapper {
             width: 150px;
@@ -366,6 +441,15 @@
         .sponsor-logo-wrapper.large .sponsor-logo {
             width: 250px;
             height: 250px;
+            object-fit: contain;
+        }
+        .sponsor-logo-wrapper.wide {
+            width: 250px;
+            height: 100px;
+        }
+        .sponsor-logo-wrapper.wide .sponsor-logo {
+            width: 250px;
+            height: 100px;
             object-fit: contain;
         }
         .sponsor-header h4 {
@@ -998,11 +1082,11 @@
             <p>As of December 2025, RAINES has grown to include 98 registered members, creating a diverse and talented community.<em class="translation">2025년 12월 현재, RAINES는 98명의 등록된 회원과 함께 성장하여 다양하고 재능 있는 커뮤니티를 만들어가고 있습니다.</em></p>
             <div class="member-distribution">
                 <div class="distribution-item">
-                    <span class="count">58</span>
+                    <span class="count">55</span>
                     <span class="label">Industry Professionals</span>
                 </div>
                 <div class="distribution-item">
-                    <span class="count">40</span>
+                    <span class="count">43</span>
                     <span class="label">Academia Members</span>
                 </div>
             </div>
@@ -1084,52 +1168,78 @@
         </section>
 
         <section id="our-sponsors">
-            <h2>Sponsors</h2>
+            <h2>Sponsors<em class="translation">후원사</em></h2>
             <div class="sponsor">
-                <h3>Our Sponsors</h3>
-                <div class="sponsor-item">
-                    <div class="sponsor-header">
-                        <img src="assets/Sponsor_logos/KoreanConsulateBoston.png" alt="Korean Consulate Boston Logo" class="sponsor-logo">
-                        <h4>주보스턴대한민국총영사관<br><span class="english-name">Consulate General of the Republic of Korea in Boston</span></h4>
-                    </div>
-                    <p>We are grateful for the support of the Korean Consulate in Boston, which has been instrumental in fostering US-Korea collaboration in critical and emerging technologies.<em class="translation">핵심적인 새로운 기술 분야에서의 한미 협력 증진에 중요한 역할을 해주신 주보스턴 대한민국 총영사관의 지원에 감사드립니다.</em></p>
-                </div>
-                <div class="sponsor-item">
-                    <div class="sponsor-header">
-                        <img src="assets/Sponsor_logos/KEIT.png" alt="KEIT Logo" class="sponsor-logo">
-                        <h4>한국산업기술기획평가원(KEIT)<br><span class="english-name">Korea Evaluation Institute of Industrial Technology</span></h4>
-                    </div>
-                    <p>KEIT supports the advancement of industrial technology and innovation in Korea, fostering collaboration between industry and academia in robotics and AI fields.<em class="translation">KEIT는 한국의 산업기술 발전과 혁신을 지원하며, 로보틱스와 AI 분야에서 산학협력을 촉진합니다.</em></p>
-                </div>
-                <div class="sponsor-item">
-                    <div class="sponsor-header">
-                        <img src="assets/Sponsor_logos/RAINBOW.png" alt="Rainbow Robotics Logo" class="sponsor-logo">
-                        <h4>레인보우로보틱스<br><span class="english-name">Rainbow Robotics</span></h4>
-                    </div>
-                    <p>Rainbow Robotics is a leading robotics company developing innovative humanoid robots and collaborative robotics solutions for various industries.<em class="translation">레인보우로보틱스는 다양한 산업을 위한 혁신적인 휴머노이드 로봇과 협동 로봇 솔루션을 개발하는 선도적인 로보틱스 회사입니다.</em></p>
-                </div>
-                <div class="sponsor-item">
-                    <div class="sponsor-header">
-                        <img src="assets/Sponsor_logos/OverseasKoreansAgency.png" alt="Overseas Koreans Agency Logo" class="sponsor-logo">
-                        <h4>재외동포청<br><span class="english-name">Overseas Koreans Agency</span></h4>
-                    </div>
-                    <p>The Overseas Koreans Agency supports Korean diaspora communities worldwide, promoting cultural exchange and strengthening connections between Korea and overseas Koreans in various fields including technology and innovation.<em class="translation">재외동포청은 전 세계 한인 디아스포라 커뮤니티를 지원하며, 기술과 혁신을 포함한 다양한 분야에서 한국과 재외동포 간의 문화 교류 촉진 및 연결 강화를 도모합니다.</em></p>
-                </div>
-                <div class="sponsor-item">
-                    <div class="sponsor-header">
-                        <div class="sponsor-logo-wrapper large">
-                            <img src="assets/Sponsor_logos/tipa_2.png" alt="TIPA Logo" class="sponsor-logo">
+                <h3>Our Sponsors<em class="translation">후원사</em></h3>
+
+                <!-- Platinum Tier -->
+                <div class="sponsor-tier platinum">
+                    <h3 class="sponsor-tier-title">Platinum</h3>
+                    <div class="sponsor-item">
+                        <div class="sponsor-header">
+                            <div class="sponsor-logo-wrapper wide">
+                                <img src="assets/Sponsor_logos/KoreanConsulateBoston.png" alt="Korean Consulate Boston Logo" class="sponsor-logo">
+                            </div>
+                            <h4>주보스턴대한민국총영사관<br><span class="english-name">Consulate General of the Republic of Korea in Boston</span></h4>
                         </div>
-                        <h4>중소기업기술정보진흥원(TIPA)<br><span class="english-name">Korea Technology and Information Promotion Agency for SMEs</span></h4>
+                        <p>We are grateful for the support of the Korean Consulate in Boston, which has been instrumental in fostering US-Korea collaboration in critical and emerging technologies.<em class="translation">핵심적인 새로운 기술 분야에서의 한미 협력 증진에 중요한 역할을 해주신 주보스턴 대한민국 총영사관의 지원에 감사드립니다.</em></p>
                     </div>
-                    <p>TIPA supports small and medium enterprises in Korea by providing technology and information services, fostering innovation, and promoting technological advancement in various industries including robotics and AI.<em class="translation">중소기업기술정보진흥원(TIPA)은 기술 및 정보 서비스를 제공하고, 혁신을 촉진하며, 로보틱스와 AI를 포함한 다양한 산업 분야에서 기술 발전을 도모함으로써 한국의 중소기업을 지원합니다.</em></p>
+                    <div class="sponsor-item">
+                        <div class="sponsor-header">
+                            <div class="sponsor-logo-wrapper wide">
+                                <img src="assets/Sponsor_logos/carbonblack.png" alt="Carbon Black Logo" class="sponsor-logo">
+                            </div>
+                            <h4>Carbon Black</h4>
+                        </div>
+                        <p>Carbon Black is a company builder that serves as an institutional co-founder, focused on innovating the physical industry through disruptive technologies. They transform physical industries by building and supporting companies that bring cutting-edge technologies to market.<em class="translation">Carbon Black는 물리적 산업에 혁신을 가져오는 회사 빌더로, 기관 공동 창업자 역할을 하며 파괴적 기술을 통해 물리적 산업을 변화시킵니다. 최첨단 기술을 시장에 가져오는 회사들을 구축하고 지원함으로써 물리적 산업을 변화시킵니다.</em></p>
+                    </div>
                 </div>
-                <div class="sponsor-item">
-                    <div class="sponsor-header">
-                        <img src="assets/Sponsor_logos/futureplay.png" alt="Future Play Logo" class="sponsor-logo">
-                        <h4>Future Play<br><span class="english-name">Future Play</span></h4>
+
+                <!-- Gold Tier -->
+                <div class="sponsor-tier gold">
+                    <h3 class="sponsor-tier-title">Gold</h3>
+                    <div class="sponsor-item">
+                        <div class="sponsor-header">
+                            <div class="sponsor-logo-wrapper large">
+                                <img src="assets/Sponsor_logos/tipa_2.png" alt="TIPA Logo" class="sponsor-logo">
+                            </div>
+                            <h4>중소기업기술정보진흥원(TIPA)<br><span class="english-name">Korea Technology and Information Promotion Agency for SMEs</span></h4>
+                        </div>
+                        <p>TIPA supports small and medium enterprises in Korea by providing technology and information services, fostering innovation, and promoting technological advancement in various industries including robotics and AI.<em class="translation">중소기업기술정보진흥원(TIPA)은 기술 및 정보 서비스를 제공하고, 혁신을 촉진하며, 로보틱스와 AI를 포함한 다양한 산업 분야에서 기술 발전을 도모함으로써 한국의 중소기업을 지원합니다.</em></p>
                     </div>
-                    <p>Future Play is a Korean venture capital and accelerator founded in 2014, specializing in early-stage investments in deep tech startups. They have invested in over 55 deep tech startups, with approximately one-third being US-based companies. Future Play focuses on supporting startups in AI, robotics, big data, hardware, human-computer interaction, and software, helping them solve global market problems and establish new standards.<em class="translation">Future Play는 2014년에 설립된 한국의 벤처 캐피털 및 액셀러레이터로, 딥테크 스타트업에 대한 초기 단계 투자를 전문으로 합니다. 55개 이상의 딥테크 스타트업에 투자하였으며, 그 중 약 3분의 1은 미국 기반의 스타트업입니다. Future Play는 인공지능, 로보틱스, 빅데이터, 하드웨어, 인간-컴퓨터 상호작용, 소프트웨어 등 다양한 분야의 기술 중심 스타트업을 지원하며, 글로벌 시장의 문제를 해결하고 새로운 표준을 설정하도록 돕고 있습니다.</em></p>
+                </div>
+
+                <!-- Silver Tier -->
+                <div class="sponsor-tier silver">
+                    <h3 class="sponsor-tier-title">Silver</h3>
+                    <div class="sponsor-item">
+                        <div class="sponsor-header">
+                            <img src="assets/Sponsor_logos/KEIT.png" alt="KEIT Logo" class="sponsor-logo">
+                            <h4>한국산업기술기획평가원(KEIT)<br><span class="english-name">Korea Evaluation Institute of Industrial Technology</span></h4>
+                        </div>
+                        <p>KEIT supports the advancement of industrial technology and innovation in Korea, fostering collaboration between industry and academia in robotics and AI fields.<em class="translation">KEIT는 한국의 산업기술 발전과 혁신을 지원하며, 로보틱스와 AI 분야에서 산학협력을 촉진합니다.</em></p>
+                    </div>
+                    <div class="sponsor-item">
+                        <div class="sponsor-header">
+                            <img src="assets/Sponsor_logos/futureplay.png" alt="Future Play Logo" class="sponsor-logo">
+                            <h4>Future Play<br><span class="english-name">Future Play</span></h4>
+                        </div>
+                        <p>Future Play is a Korean venture capital and accelerator founded in 2014, specializing in early-stage investments in deep tech startups. They have invested in over 55 deep tech startups, with approximately one-third being US-based companies. Future Play focuses on supporting startups in AI, robotics, big data, hardware, human-computer interaction, and software, helping them solve global market problems and establish new standards.<em class="translation">Future Play는 2014년에 설립된 한국의 벤처 캐피털 및 액셀러레이터로, 딥테크 스타트업에 대한 초기 단계 투자를 전문으로 합니다. 55개 이상의 딥테크 스타트업에 투자하였으며, 그 중 약 3분의 1은 미국 기반의 스타트업입니다. Future Play는 인공지능, 로보틱스, 빅데이터, 하드웨어, 인간-컴퓨터 상호작용, 소프트웨어 등 다양한 분야의 기술 중심 스타트업을 지원하며, 글로벌 시장의 문제를 해결하고 새로운 표준을 설정하도록 돕고 있습니다.</em></p>
+                    </div>
+                    <div class="sponsor-item">
+                        <div class="sponsor-header">
+                            <img src="assets/Sponsor_logos/RAINBOW.png" alt="Rainbow Robotics Logo" class="sponsor-logo">
+                            <h4>레인보우로보틱스<br><span class="english-name">Rainbow Robotics</span></h4>
+                        </div>
+                        <p>Rainbow Robotics is a leading robotics company developing innovative humanoid robots and collaborative robotics solutions for various industries.<em class="translation">레인보우로보틱스는 다양한 산업을 위한 혁신적인 휴머노이드 로봇과 협동 로봇 솔루션을 개발하는 선도적인 로보틱스 회사입니다.</em></p>
+                    </div>
+                    <div class="sponsor-item">
+                        <div class="sponsor-header">
+                            <img src="assets/Sponsor_logos/OverseasKoreansAgency.png" alt="Overseas Koreans Agency Logo" class="sponsor-logo">
+                            <h4>재외동포청<br><span class="english-name">Overseas Koreans Agency</span></h4>
+                        </div>
+                        <p>The Overseas Koreans Agency supports Korean diaspora communities worldwide, promoting cultural exchange and strengthening connections between Korea and overseas Koreans in various fields including technology and innovation.<em class="translation">재외동포청은 전 세계 한인 디아스포라 커뮤니티를 지원하며, 기술과 혁신을 포함한 다양한 분야에서 한국과 재외동포 간의 문화 교류 촉진 및 연결 강화를 도모합니다.</em></p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1337,9 +1447,9 @@
                     </div>
 
                     <p>
-                        On November 17th, K-RAINES successfully hosted its fall networking event, "The Physical AI Era: Korea-US New Technology Cooperation," at CIC Venture Café in Cambridge. This special event, sponsored by the Consulate General of the Republic of Korea in Boston, Overseas Koreans Agency, TIPA (Korea Technology and Information Promotion Agency for SMEs), Carbon Black, and Carbon Six, brought together 48 attendees to explore the exciting frontier of Physical AI. The event began with sponsor speeches, starting with Deputy Consul General Kwak Jung-yeol (곽정열) from the Consulate General of the Republic of Korea in Boston, followed by Director Lee Hoon-bae (이훈배) from TIPA and Advisor HK Kwon (권혁민) representing Carbon Black. Three distinguished speakers then shared their insights: CEO Lee Gil-woo from Zordi, Prof. Benjamin Marlin from University of Massachusetts Amherst, and Prof. Kim Chang-ik from KAIST. The event featured engaging presentations and Q&A sessions, followed by a panel discussion with all speakers, and concluded with networking and dinner, fostering meaningful connections and collaboration between Korea and the US in advancing AI technologies. This event marked a wonderful conclusion to the year, bringing together the community to share knowledge and build lasting relationships in the Boston tech ecosystem.
+                        On November 17th, K-RAINES successfully hosted its fall networking event, "The Physical AI Era: Korea-US New Technology Cooperation," at CIC Venture Café in Cambridge. This special event, sponsored by the Consulate General of the Republic of Korea in Boston, Overseas Koreans Agency, TIPA (Korea Technology and Information Promotion Agency for SMEs), and Carbon Black, brought together 48 attendees to explore the exciting frontier of Physical AI. The event began with sponsor speeches, starting with Deputy Consul General Kwak Jung-yeol (곽정열) from the Consulate General of the Republic of Korea in Boston, followed by Director Lee Hoon-bae (이훈배) from TIPA and Advisor HK Kwon (권혁민) representing Carbon Black. Three distinguished speakers then shared their insights: CEO Lee Gil-woo from Zordi, Prof. Benjamin Marlin from University of Massachusetts Amherst, and Prof. Kim Chang-ik from KAIST. The event featured engaging presentations and Q&A sessions, followed by a panel discussion with all speakers, and concluded with networking and dinner, fostering meaningful connections and collaboration between Korea and the US in advancing AI technologies. This event marked a wonderful conclusion to the year, bringing together the community to share knowledge and build lasting relationships in the Boston tech ecosystem.
                         <em class="translation">
-                            지난 11월 17일, K-RAINES가 케임브리지 CIC Venture Café에서 "Physical AI 시대: 한미 신기술 협력" 가을 네트워킹 이벤트를 성공적으로 개최했습니다. 주보스턴 총영사관, 재외동포청, 중소기업기술정보진흥원(TIPA), 카본 블랙, 카본식스의 후원으로 진행된 이번 특별 행사에는 48명의 참석자들이 모여 Physical AI의 흥미진진한 최전선을 탐구했습니다. 행사는 주보스턴 총영사관 곽정열 부총영사님의 인사말로 시작되었고, 이어서 TIPA 이훈배 소장님과 카본 블랙 권혁민 어드바이저의 후원사 인사말이 이어졌습니다. 그 후 Zordi 이길우 대표, 매사추세츠 대학교 앰허스트 캠퍼스 Benjamin Marlin 교수, KAIST 김창익 교수 등 세 분의 연사분들이 인사이트를 공유했습니다. 이번 행사는 발표 및 Q&A 세션, 모든 연사분들이 참여한 패널 토론, 그리고 네트워킹과 만찬으로 이어져 한미 간 AI 기술 발전을 위한 의미 있는 연결과 협력을 촉진했습니다. 올 한 해를 마무리하며 커뮤니티가 함께 지식을 공유하고 보스턴 기술 생태계에서 지속적인 관계를 구축하는 뜻깊은 시간이 되었습니다.
+                            지난 11월 17일, K-RAINES가 케임브리지 CIC Venture Café에서 "Physical AI 시대: 한미 신기술 협력" 가을 네트워킹 이벤트를 성공적으로 개최했습니다. 주보스턴 총영사관, 재외동포청, 중소기업기술정보진흥원(TIPA), 카본 블랙의 후원으로 진행된 이번 특별 행사에는 48명의 참석자들이 모여 Physical AI의 흥미진진한 최전선을 탐구했습니다. 행사는 주보스턴 총영사관 곽정열 부총영사님의 인사말로 시작되었고, 이어서 TIPA 이훈배 소장님과 카본 블랙 권혁민 어드바이저의 후원사 인사말이 이어졌습니다. 그 후 Zordi 이길우 대표, 매사추세츠 대학교 앰허스트 캠퍼스 Benjamin Marlin 교수, KAIST 김창익 교수 등 세 분의 연사분들이 인사이트를 공유했습니다. 이번 행사는 발표 및 Q&A 세션, 모든 연사분들이 참여한 패널 토론, 그리고 네트워킹과 만찬으로 이어져 한미 간 AI 기술 발전을 위한 의미 있는 연결과 협력을 촉진했습니다. 올 한 해를 마무리하며 커뮤니티가 함께 지식을 공유하고 보스턴 기술 생태계에서 지속적인 관계를 구축하는 뜻깊은 시간이 되었습니다.
                         </em>
                         <br><br>
                         <strong>Attendees:</strong> 48 people attended.<em class="translation"><strong>참석자:</strong> 48명 참석.</em>

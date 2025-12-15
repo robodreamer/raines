@@ -134,8 +134,8 @@
 
         .event-images {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 25px;
             margin-top: 30px;
         }
 
@@ -316,6 +316,47 @@
             margin-top: 10px;
         }
 
+        .translation {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.95em;
+            color: #666;
+            font-style: italic;
+            padding-left: 20px;
+            border-left: 3px solid #D8BFD8;
+        }
+
+        .sponsor-tier {
+            margin-bottom: 40px;
+        }
+
+        .sponsor-tier-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .sponsor-tier.platinum .sponsor-tier-title {
+            color: #E5E4E2;
+            background: linear-gradient(135deg, #C0C0C0 0%, #808080 100%);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .sponsor-tier.gold .sponsor-tier-title {
+            color: #FFD700;
+            background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .sponsor-tier.silver .sponsor-tier-title {
+            color: #C0C0C0;
+            background: linear-gradient(135deg, #A8A8A8 0%, #808080 100%);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
         .sponsors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -330,6 +371,23 @@
             border-left: 4px solid #6A5ACD;
         }
 
+        .sponsor-tier.platinum .sponsor-card {
+            background: rgba(192, 192, 192, 0.15);
+            border-left-color: #C0C0C0;
+            border-left-width: 5px;
+        }
+
+        .sponsor-tier.gold .sponsor-card {
+            background: rgba(255, 215, 0, 0.15);
+            border-left-color: #FFD700;
+            border-left-width: 5px;
+        }
+
+        .sponsor-tier.silver .sponsor-card {
+            background: rgba(192, 192, 192, 0.1);
+            border-left-color: #C0C0C0;
+        }
+
         .sponsor-header {
             display: flex;
             align-items: center;
@@ -338,10 +396,42 @@
         }
 
         .sponsor-logo {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             object-fit: contain;
             flex-shrink: 0;
+            display: block;
+        }
+
+        .sponsor-logo-wrapper {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .sponsor-logo-wrapper.large {
+            width: 250px;
+            height: 250px;
+        }
+
+        .sponsor-logo-wrapper.large .sponsor-logo {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+        }
+
+        .sponsor-logo-wrapper.wide {
+            width: 250px;
+            height: 100px;
+        }
+
+        .sponsor-logo-wrapper.wide .sponsor-logo {
+            width: 250px;
+            height: 100px;
+            object-fit: contain;
         }
 
         .sponsor-card h4 {
@@ -388,7 +478,7 @@
 
         @media print {
             .event-images {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(1, 1fr);
             }
             .stats-grid {
                 grid-template-columns: repeat(4, 1fr);
@@ -417,22 +507,24 @@
         <h2 class="section-title">Our Story</h2>
         <p class="intro-text">
             Founded in April 2025, RAINES is a community for Korean professionals working and researching in the Robotics and AI fields throughout the New England area. Through research seminars, career seminars, and networking events, we aim to expand our members' professional networks and foster innovation and growth in the field.
+            <em class="translation">뉴잉글랜드 지역에서 Robotics와 AI 분야에 종사하고 연구하는 한인 전문가들을 위한 모임으로 2025년 4월 창립되었습니다. 연구 세미나, 커리어 세미나, 네트워킹 행사들의 운영을 통해 한인 전문가의 네트워크 확장 및 분야에서의 혁신 및 성장을 도모하고 있습니다.</em>
         </p>
     </div>
 
     <div class="section">
         <h2 class="section-title">2025 Highlights</h2>
+        <p style="text-align: center; margin-bottom: 20px;">As of December 2025, RAINES has grown to include 98 registered members, creating a diverse and talented community.<em class="translation">2025년 12월 현재, RAINES는 98명의 등록된 회원과 함께 성장하여 다양하고 재능 있는 커뮤니티를 만들어가고 있습니다.</em></p>
         <div class="stats-grid">
             <div class="stat-card">
                 <span class="stat-number">98</span>
                 <span class="stat-label">Total Members</span>
             </div>
             <div class="stat-card">
-                <span class="stat-number">58</span>
+                <span class="stat-number">55</span>
                 <span class="stat-label">Industry Professionals</span>
             </div>
             <div class="stat-card">
-                <span class="stat-number">40</span>
+                <span class="stat-number">43</span>
                 <span class="stat-label">Academia Members</span>
             </div>
             <div class="stat-card">
@@ -440,6 +532,7 @@
                 <span class="stat-label">Major Events</span>
             </div>
         </div>
+        <p style="text-align: center; margin-top: 20px;">Our community is enriched by members from a variety of fields beyond just research and engineering, including product management and design.<em class="translation">Research 및 Engineering 외 Product Management, Design 분야 등에도 다양하게 분포</em></p>
     </div>
 
     <div class="section">
@@ -454,12 +547,14 @@
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-date">April 28, 2025</div>
-                <div class="timeline-title">RAINES Launching Event: AI-Powered Robotics and Autonomous Driving Seminar</div>
+                <div class="timeline-title">RAINES Launching Event: AI-Powered Robotics and Autonomous Driving Seminar<em class="translation">RAINES 출범 행사: AI 기반 로보틱스 및 자율주행 세미나</em></div>
                 <div class="timeline-details">
                     <p><strong>Location:</strong> CIC Cambridge</p>
                     <p><strong>Speakers:</strong> Dr. Haewon Park (MIT Media Lab), Prof. Yoon Kim (MIT EECS)</p>
-                    <p><strong>Attendees:</strong> 49 total (35 from Industry, 14 from Academia)</p>
-                    <p>This seminar, hosted by the Korean Consulate in Boston, brought together experts and enthusiasts to explore the future of AI-powered robotics and autonomous driving. Dr. Haewon Park shared insights on social robots, while Prof. Yoon Kim discussed large language models, sparking engaging conversations on emerging technologies. The event fostered US-Korea collaboration, offering a platform for networking, knowledge sharing, and building new connections in the Boston tech community.</p>
+                    <p><strong>Attendees:</strong> 49 total (35 from Industry, 14 from Academia)<em class="translation"><strong>참석자:</strong> 총 49명 (산업 35명, 학계 14명)</em></p>
+                    <p>This seminar, hosted by the Korean Consulate in Boston, brought together experts and enthusiasts to explore the future of AI-powered robotics and autonomous driving. Dr. Haewon Park shared insights on social robots, while Prof. Yoon Kim discussed large language models, sparking engaging conversations on emerging technologies. The event fostered US-Korea collaboration, offering a platform for networking, knowledge sharing, and building new connections in the Boston tech community.
+                    <em class="translation">주 보스턴 대한민국 총영사관의 후원으로 개최된 이 세미나는 AI 기반 로보틱스와 자율주행의 미래를 탐구하기 위해 전문가들과 열정적인 분들을 한자리에 모았습니다. MIT Media Lab의 박혜원 박사님은 소셜 로봇에 대한 통찰을 공유했고, MIT EECS의 김윤형 교수님은 대규모 언어 모델에 대해 논하며 새로운 기술에 대한 활발한 논의를 이끌었습니다. 본 행사는 한미 협력을 강화하고, 보스턴 기술 커뮤니티 내 네트워킹, 지식 공유, 그리고 새로운 연결을 구축하는 기회의 장을 마련했습니다.</em>
+                    </p>
                 </div>
                 <div class="event-images">
                     <img src="assets/event_042825/launch_event_042825_photo_1.png" alt="Launch Event Photo 1">
@@ -473,12 +568,14 @@
 
             <div class="timeline-item">
                 <div class="timeline-date">August 21, 2025</div>
-                <div class="timeline-title">RAINES Summer Seminar: Recent Advances in AI Problem Solving</div>
+                <div class="timeline-title">RAINES Summer Seminar: Recent Advances in AI Problem Solving<em class="translation">K-RAINES Summer Seminar: Recent Advances in AI Problem Solving</em></div>
                 <div class="timeline-details">
                     <p><strong>Location:</strong> Korean Consulate General in Boston</p>
                     <p><strong>Speakers:</strong> Dr. Jungkoo Kang (IBM Research), Prof. Junehyuk Jung (Brown University & Google DeepMind)</p>
-                    <p><strong>Attendees:</strong> 55 total (sold out capacity)</p>
-                    <p>On August 21st, we successfully concluded the K-RAINES Summer Seminar at the newly renovated Boston Consulate General! With a sold-out capacity of 55 attendees, this seminar was conducted with tremendous enthusiasm. Dr. Jungkoo Kang from IBM Research shared insights on LLM-based problem solving and workflow generation, while Prof. Junehyuk Jung from Brown University & Google DeepMind presented research on automated mathematical reasoning. We had meaningful time with insights from two speakers at the forefront of AI research, along with networking and dinner with participants. Thanks to the various prizes provided by the Boston Consulate General, we also enjoyed a fun raffle time, and most participants were able to take home a gift. We thank the Consulate General of the Republic of Korea in Boston, Korea Evaluation Institute of Industrial Technology (KEIT), Rainbow Robotics, and all attendees who joined us for this seminar!</p>
+                    <p><strong>Attendees:</strong> 55 total (sold out capacity)<em class="translation"><strong>참석자:</strong> 총 55명 (정원 마감)</em></p>
+                    <p>On August 21st, we successfully concluded the K-RAINES Summer Seminar at the newly renovated Boston Consulate General! With a sold-out capacity of 55 attendees, this seminar was conducted with tremendous enthusiasm. Dr. Jungkoo Kang from IBM Research shared insights on LLM-based problem solving and workflow generation, while Prof. Junehyuk Jung from Brown University & Google DeepMind presented research on automated mathematical reasoning. We had meaningful time with insights from two speakers at the forefront of AI research, along with networking and dinner with participants. Thanks to the various prizes provided by the Boston Consulate General, we also enjoyed a fun raffle time, and most participants were able to take home a gift. We thank the Consulate General of the Republic of Korea in Boston, Korea Evaluation Institute of Industrial Technology (KEIT), Rainbow Robotics, and all attendees who joined us for this seminar!
+                    <em class="translation">지난 8월 21일, 새로 단장한 보스턴 총영사관에서 K-RAINES Summer Seminar: Recent Advances in AI Problem Solving을 성공적으로 마쳤습니다! 55명 정원 마감과 함께 뜨거운 관심 속에 진행된 이번 세미나에서는 IBM Research 강정구 박사님이 LLM 기반 문제 해결 및 워크플로우 생성을, Brown University & Google DeepMind 정준혁 교수님이 수학 추론 자동화 연구를 공유해주셨습니다. AI 연구의 최전선에 있는 두 연사의 인사이트와 함께, 참가자분들과의 네트워킹과 만찬으로 의미 있는 시간을 보냈습니다. 또한 보스턴총영사관에서 다양한 상품을 지원해주신 덕분에 즐거운 래플 시간도 함께 하며 참가자분들 대부분이 선물도 하나씩 들고 갈 수 있었습니다. 이번 세미나를 위해 함께해주신 주보스턴대한민국총영사관, 한국산업기술기획평가원(KEIT), 레인보우로보틱스, 그리고 참석해주신 모든 분들께 감사드립니다! 앞으로도 K-RAINES는 다양한 분들과 함께 더 많은 배움과 교류의 장을 만들어가겠습니다.</em>
+                    </p>
                 </div>
                 <div class="event-images">
                     <img src="assets/poster_event_aug_2025.png" alt="August Event Poster">
@@ -503,13 +600,15 @@
 
             <div class="timeline-item">
                 <div class="timeline-date">November 17, 2025</div>
-                <div class="timeline-title">K-RAINES Fall Event: The Physical AI Era: Korea-US New Technology Cooperation</div>
+                <div class="timeline-title">K-RAINES Fall Event: The Physical AI Era: Korea-US New Technology Cooperation<em class="translation">K-RAINES 가을 행사: Physical AI 시대: 한미 신기술 협력</em></div>
                 <div class="timeline-details">
                     <p><strong>Location:</strong> CIC Venture Café (1 Broadway, Cambridge)</p>
                     <p><strong>Date & Time:</strong> November 17, 2025 (Monday) 5:30 PM - 8:00 PM</p>
                     <p><strong>Speakers:</strong> CEO Lee Gil-woo (Zordi), Prof. Benjamin Marlin (University of Massachusetts Amherst), Prof. Kim Chang-ik (KAIST), Advisor HK Kwon (권혁민, Carbon Black), Director Lee Hoon-bae (이훈배, TIPA)</p>
-                    <p><strong>Attendees:</strong> 48 people attended</p>
-                    <p>On November 17th, K-RAINES successfully hosted its fall networking event, "The Physical AI Era: Korea-US New Technology Cooperation," at CIC Venture Café in Cambridge. This special event, sponsored by the Consulate General of the Republic of Korea in Boston, Overseas Koreans Agency, TIPA (Korea Technology and Information Promotion Agency for SMEs), Carbon Black, and Carbon Six, brought together 48 attendees to explore the exciting frontier of Physical AI. The event began with sponsor speeches, starting with Deputy Consul General Kwak Jung-yeol (곽정열) from the Consulate General of the Republic of Korea in Boston, followed by Director Lee Hoon-bae (이훈배) from TIPA and Advisor HK Kwon (권혁민) representing Carbon Black. Three distinguished speakers then shared their insights: CEO Lee Gil-woo from Zordi, Prof. Benjamin Marlin from University of Massachusetts Amherst, and Prof. Kim Chang-ik from KAIST. The event featured engaging presentations and Q&A sessions, followed by a panel discussion with all speakers, and concluded with networking and dinner, fostering meaningful connections and collaboration between Korea and the US in advancing AI technologies. This event marked a wonderful conclusion to the year, bringing together the community to share knowledge and build lasting relationships in the Boston tech ecosystem.</p>
+                    <p><strong>Attendees:</strong> 48 people attended<em class="translation"><strong>참석자:</strong> 48명 참석</em></p>
+                    <p>On November 17th, K-RAINES successfully hosted its fall networking event, "The Physical AI Era: Korea-US New Technology Cooperation," at CIC Venture Café in Cambridge. This special event, sponsored by the Consulate General of the Republic of Korea in Boston, Overseas Koreans Agency, TIPA (Korea Technology and Information Promotion Agency for SMEs), and Carbon Black, brought together 48 attendees to explore the exciting frontier of Physical AI. The event began with sponsor speeches, starting with Deputy Consul General Kwak Jung-yeol (곽정열) from the Consulate General of the Republic of Korea in Boston, followed by Director Lee Hoon-bae (이훈배) from TIPA and Advisor HK Kwon (권혁민) representing Carbon Black. Three distinguished speakers then shared their insights: CEO Lee Gil-woo from Zordi, Prof. Benjamin Marlin from University of Massachusetts Amherst, and Prof. Kim Chang-ik from KAIST. The event featured engaging presentations and Q&A sessions, followed by a panel discussion with all speakers, and concluded with networking and dinner, fostering meaningful connections and collaboration between Korea and the US in advancing AI technologies. This event marked a wonderful conclusion to the year, bringing together the community to share knowledge and build lasting relationships in the Boston tech ecosystem.
+                    <em class="translation">지난 11월 17일, K-RAINES가 케임브리지 CIC Venture Café에서 "Physical AI 시대: 한미 신기술 협력" 가을 네트워킹 이벤트를 성공적으로 개최했습니다. 주보스턴 총영사관, 재외동포청, 중소기업기술정보진흥원(TIPA), 카본 블랙의 후원으로 진행된 이번 특별 행사에는 48명의 참석자들이 모여 Physical AI의 흥미진진한 최전선을 탐구했습니다. 행사는 주보스턴 총영사관 곽정열 부총영사님의 인사말로 시작되었고, 이어서 TIPA 이훈배 소장님과 카본 블랙 권혁민 어드바이저의 후원사 인사말이 이어졌습니다. 그 후 Zordi 이길우 대표, 매사추세츠 대학교 앰허스트 캠퍼스 Benjamin Marlin 교수, KAIST 김창익 교수 등 세 분의 연사분들이 인사이트를 공유했습니다. 이번 행사는 발표 및 Q&A 세션, 모든 연사분들이 참여한 패널 토론, 그리고 네트워킹과 만찬으로 이어져 한미 간 AI 기술 발전을 위한 의미 있는 연결과 협력을 촉진했습니다. 올 한 해를 마무리하며 커뮤니티가 함께 지식을 공유하고 보스턴 기술 생태계에서 지속적인 관계를 구축하는 뜻깊은 시간이 되었습니다.</em>
+                    </p>
                 </div>
                 <div class="event-images">
                     <img src="assets/event_112325/poster_111725.jpg" alt="November Event Poster 1">
@@ -604,7 +703,7 @@
                 </div>
                 <div class="benefit-content">
                     <h3>Exclusive Chat Room</h3>
-                    <p>Invitation to an open chat room for networking with Robotics and AI professionals in the New England area.</p>
+                    <p>Invitation to an open chat room for networking with Robotics and AI professionals in the New England area.<em class="translation">뉴잉글랜드 지역 내 Robotics와 AI 분야 종사자간 소통을 위한 오픈챗방 초대</em></p>
                 </div>
             </div>
             <div class="benefit-card">
@@ -613,7 +712,7 @@
                 </div>
                 <div class="benefit-content">
                     <h3>Priority Event Access</h3>
-                    <p>Receive priority invitations to all events hosted by RAINES, ensuring you never miss out.</p>
+                    <p>Receive priority invitations to all events hosted by RAINES, ensuring you never miss out.<em class="translation">RAINES 주최 행사에의 우선 초대</em></p>
                 </div>
             </div>
             <div class="benefit-card">
@@ -622,7 +721,7 @@
                 </div>
                 <div class="benefit-content">
                     <h3>Event & News Updates</h3>
-                    <p>Stay informed with the latest news and updates on Robotics and AI events in New England and beyond.</p>
+                    <p>Stay informed with the latest news and updates on Robotics and AI events in New England and beyond.<em class="translation">뉴잉글랜드 지역 및 타지역 Robotics와 AI 관련 행사 소식 공유</em></p>
                 </div>
             </div>
         </div>
@@ -634,48 +733,80 @@
 
     <div class="section">
         <h2 class="section-title">Our Sponsors</h2>
-        <div class="sponsors-grid">
-            <div class="sponsor-card">
-                <div class="sponsor-header">
-                    <img src="assets/Sponsor_logos/KoreanConsulateBoston.png" alt="Korean Consulate Boston Logo" class="sponsor-logo">
-                    <h4>주보스턴대한민국총영사관<br><small>Consulate General of the Republic of Korea in Boston</small></h4>
+
+        <!-- Platinum Tier -->
+        <div class="sponsor-tier platinum">
+            <h3 class="sponsor-tier-title">Platinum</h3>
+            <div class="sponsors-grid">
+                <div class="sponsor-card">
+                    <div class="sponsor-header">
+                        <div class="sponsor-logo-wrapper wide">
+                            <img src="assets/Sponsor_logos/KoreanConsulateBoston.png" alt="Korean Consulate Boston Logo" class="sponsor-logo">
+                        </div>
+                        <h4>주보스턴대한민국총영사관<br><small>Consulate General of the Republic of Korea in Boston</small></h4>
+                    </div>
+                    <p>We are grateful for the support of the Korean Consulate in Boston, which has been instrumental in fostering US-Korea collaboration in critical and emerging technologies.<em class="translation">핵심적인 새로운 기술 분야에서의 한미 협력 증진에 중요한 역할을 해주신 주보스턴 대한민국 총영사관의 지원에 감사드립니다.</em></p>
                 </div>
-                <p>We are grateful for the support of the Korean Consulate in Boston, which has been instrumental in fostering US-Korea collaboration in critical and emerging technologies.</p>
+                <div class="sponsor-card">
+                    <div class="sponsor-header">
+                        <div class="sponsor-logo-wrapper wide">
+                            <img src="assets/Sponsor_logos/carbonblack.png" alt="Carbon Black Logo" class="sponsor-logo">
+                        </div>
+                        <h4>Carbon Black</h4>
+                    </div>
+                    <p>Carbon Black is a company builder that serves as an institutional co-founder, focused on innovating the physical industry through disruptive technologies. They transform physical industries by building and supporting companies that bring cutting-edge technologies to market.<em class="translation">Carbon Black는 물리적 산업에 혁신을 가져오는 회사 빌더로, 기관 공동 창업자 역할을 하며 파괴적 기술을 통해 물리적 산업을 변화시킵니다. 최첨단 기술을 시장에 가져오는 회사들을 구축하고 지원함으로써 물리적 산업을 변화시킵니다.</em></p>
+                </div>
             </div>
-            <div class="sponsor-card">
-                <div class="sponsor-header">
-                    <img src="assets/Sponsor_logos/KEIT.png" alt="KEIT Logo" class="sponsor-logo">
-                    <h4>한국산업기술기획평가원(KEIT)<br><small>Korea Evaluation Institute of Industrial Technology</small></h4>
+        </div>
+
+        <!-- Gold Tier -->
+        <div class="sponsor-tier gold">
+            <h3 class="sponsor-tier-title">Gold</h3>
+            <div class="sponsors-grid">
+                <div class="sponsor-card">
+                    <div class="sponsor-header">
+                        <div class="sponsor-logo-wrapper large">
+                            <img src="assets/Sponsor_logos/tipa_2.png" alt="TIPA Logo" class="sponsor-logo">
+                        </div>
+                        <h4>중소기업기술정보진흥원(TIPA)<br><small>Korea Technology and Information Promotion Agency for SMEs</small></h4>
+                    </div>
+                    <p>TIPA supports small and medium enterprises in Korea by providing technology and information services, fostering innovation, and promoting technological advancement in various industries including robotics and AI.<em class="translation">중소기업기술정보진흥원(TIPA)은 기술 및 정보 서비스를 제공하고, 혁신을 촉진하며, 로보틱스와 AI를 포함한 다양한 산업 분야에서 기술 발전을 도모함으로써 한국의 중소기업을 지원합니다.</em></p>
                 </div>
-                <p>KEIT supports the advancement of industrial technology and innovation in Korea, fostering collaboration between industry and academia in robotics and AI fields.</p>
             </div>
-            <div class="sponsor-card">
-                <div class="sponsor-header">
-                    <img src="assets/Sponsor_logos/RAINBOW.png" alt="Rainbow Robotics Logo" class="sponsor-logo">
-                    <h4>레인보우로보틱스<br><small>Rainbow Robotics</small></h4>
+        </div>
+
+        <!-- Silver Tier -->
+        <div class="sponsor-tier silver">
+            <h3 class="sponsor-tier-title">Silver</h3>
+            <div class="sponsors-grid">
+                <div class="sponsor-card">
+                    <div class="sponsor-header">
+                        <img src="assets/Sponsor_logos/KEIT.png" alt="KEIT Logo" class="sponsor-logo">
+                        <h4>한국산업기술기획평가원(KEIT)<br><small>Korea Evaluation Institute of Industrial Technology</small></h4>
+                    </div>
+                    <p>KEIT supports the advancement of industrial technology and innovation in Korea, fostering collaboration between industry and academia in robotics and AI fields.<em class="translation">KEIT는 한국의 산업기술 발전과 혁신을 지원하며, 로보틱스와 AI 분야에서 산학협력을 촉진합니다.</em></p>
                 </div>
-                <p>Rainbow Robotics is a leading robotics company developing innovative humanoid robots and collaborative robotics solutions for various industries.</p>
-            </div>
-            <div class="sponsor-card">
-                <div class="sponsor-header">
-                    <img src="assets/Sponsor_logos/OverseasKoreansAgency.png" alt="Overseas Koreans Agency Logo" class="sponsor-logo">
-                    <h4>재외동포청<br><small>Overseas Koreans Agency</small></h4>
+                <div class="sponsor-card">
+                    <div class="sponsor-header">
+                        <img src="assets/Sponsor_logos/futureplay.png" alt="Future Play Logo" class="sponsor-logo">
+                        <h4>Future Play</h4>
+                    </div>
+                    <p>Future Play is a Korean venture capital and accelerator founded in 2014, specializing in early-stage investments in deep tech startups. They have invested in over 55 deep tech startups, with approximately one-third being US-based companies.<em class="translation">Future Play는 2014년에 설립된 한국의 벤처 캐피털 및 액셀러레이터로, 딥테크 스타트업에 대한 초기 단계 투자를 전문으로 합니다. 55개 이상의 딥테크 스타트업에 투자하였으며, 그 중 약 3분의 1은 미국 기반의 스타트업입니다. Future Play는 인공지능, 로보틱스, 빅데이터, 하드웨어, 인간-컴퓨터 상호작용, 소프트웨어 등 다양한 분야의 기술 중심 스타트업을 지원하며, 글로벌 시장의 문제를 해결하고 새로운 표준을 설정하도록 돕고 있습니다.</em></p>
                 </div>
-                <p>The Overseas Koreans Agency supports Korean diaspora communities worldwide, promoting cultural exchange and strengthening connections between Korea and overseas Koreans in various fields including technology and innovation.</p>
-            </div>
-            <div class="sponsor-card">
-                <div class="sponsor-header">
-                    <img src="assets/Sponsor_logos/tipa_2.png" alt="TIPA Logo" class="sponsor-logo">
-                    <h4>중소기업기술정보진흥원(TIPA)<br><small>Korea Technology and Information Promotion Agency for SMEs</small></h4>
+                <div class="sponsor-card">
+                    <div class="sponsor-header">
+                        <img src="assets/Sponsor_logos/RAINBOW.png" alt="Rainbow Robotics Logo" class="sponsor-logo">
+                        <h4>레인보우로보틱스<br><small>Rainbow Robotics</small></h4>
+                    </div>
+                    <p>Rainbow Robotics is a leading robotics company developing innovative humanoid robots and collaborative robotics solutions for various industries.<em class="translation">레인보우로보틱스는 다양한 산업을 위한 혁신적인 휴머노이드 로봇과 협동 로봇 솔루션을 개발하는 선도적인 로보틱스 회사입니다.</em></p>
                 </div>
-                <p>TIPA supports small and medium enterprises in Korea by providing technology and information services, fostering innovation, and promoting technological advancement in various industries including robotics and AI.</p>
-            </div>
-            <div class="sponsor-card">
-                <div class="sponsor-header">
-                    <img src="assets/Sponsor_logos/futureplay.png" alt="Future Play Logo" class="sponsor-logo">
-                    <h4>Future Play</h4>
+                <div class="sponsor-card">
+                    <div class="sponsor-header">
+                        <img src="assets/Sponsor_logos/OverseasKoreansAgency.png" alt="Overseas Koreans Agency Logo" class="sponsor-logo">
+                        <h4>재외동포청<br><small>Overseas Koreans Agency</small></h4>
+                    </div>
+                    <p>The Overseas Koreans Agency supports Korean diaspora communities worldwide, promoting cultural exchange and strengthening connections between Korea and overseas Koreans in various fields including technology and innovation.<em class="translation">재외동포청은 전 세계 한인 디아스포라 커뮤니티를 지원하며, 기술과 혁신을 포함한 다양한 분야에서 한국과 재외동포 간의 문화 교류 촉진 및 연결 강화를 도모합니다.</em></p>
                 </div>
-                <p>Future Play is a Korean venture capital and accelerator founded in 2014, specializing in early-stage investments in deep tech startups. They have invested in over 55 deep tech startups, with approximately one-third being US-based companies.</p>
             </div>
         </div>
     </div>
@@ -685,67 +816,68 @@
         <div class="sponsorship-section">
             <p class="intro-text">
                 Support the growth of the Korean Robotics & AI community in New England. We welcome various forms of sponsorship to help us achieve our mission.
+                <em class="translation">뉴잉글랜드 지역의 Korean Robotics & AI 커뮤니티 성장을 위해 여러 형태의 재정적 Sponsorship을 환영합니다.</em>
             </p>
 
-            <h3 style="color: #6A5ACD; margin-top: 30px; margin-bottom: 20px;">How Your Sponsorship Helps</h3>
+            <h3 style="color: #6A5ACD; margin-top: 30px; margin-bottom: 20px;">How Your Sponsorship Helps<em class="translation">후원금 사용처</em></h3>
             <div class="sponsorship-grid">
                 <div class="sponsorship-item">
                     <i class="fas fa-calendar-alt"></i>
                     <h4>Future Events</h4>
-                    <p>Meetups, Workshops, Demo Days</p>
+                    <p>Meetups, Workshops, Demo Days<em class="translation">미래 이벤트 개최: 밋업, 워크숍, 데모데이</em></p>
                 </div>
                 <div class="sponsorship-item">
                     <i class="fas fa-cogs"></i>
                     <h4>Operational Costs</h4>
-                    <p>Venue, Logistics, Marketing, Refreshments</p>
+                    <p>Venue, Logistics, Marketing, Refreshments<em class="translation">운영 비용: 장소, 물류, 마케팅, 다과</em></p>
                 </div>
                 <div class="sponsorship-item">
                     <i class="fas fa-users"></i>
                     <h4>Community Programs</h4>
-                    <p>Student Engagement, Guest Speaker Invitations</p>
+                    <p>Student Engagement, Guest Speaker Invitations<em class="translation">커뮤니티 프로그램: 학생 참여, 초청 연사</em></p>
                 </div>
             </div>
 
-            <h3 style="color: #6A5ACD; margin-top: 30px; margin-bottom: 20px;">Sponsor Benefits</h3>
+            <h3 style="color: #6A5ACD; margin-top: 30px; margin-bottom: 20px;">Sponsor Benefits<em class="translation">스폰서 혜택</em></h3>
             <div class="sponsorship-grid">
                 <div class="sponsorship-item">
                     <i class="fas fa-microphone"></i>
                     <h4>Speaking Sessions</h4>
-                    <p>Opportunity for a speaking session during our events</p>
+                    <p>Opportunity for a speaking session during our events.<em class="translation">행사 중 스폰서 발표 세션 제공</em></p>
                 </div>
                 <div class="sponsorship-item">
                     <i class="fas fa-eye"></i>
                     <h4>Logo Exposure</h4>
-                    <p>On the RAINES homepage, event materials, and banners</p>
+                    <p>On the RAINES homepage, event materials, and banners.<em class="translation">RAINES 홈페이지, 행사 자료, 배너에 로고 노출</em></p>
                 </div>
                 <div class="sponsorship-item">
                     <i class="fas fa-building"></i>
                     <h4>Booth Space</h4>
-                    <p>Potential for booth space at future large-scale events</p>
+                    <p>Potential for booth space at future large-scale events.<em class="translation">향후 대규모 행사에서 부스 공간 제공 가능</em></p>
                 </div>
             </div>
 
-            <h3 style="color: #6A5ACD; margin-top: 30px; margin-bottom: 20px;">Ways to Contribute</h3>
+            <h3 style="color: #6A5ACD; margin-top: 30px; margin-bottom: 20px;">Ways to Contribute<em class="translation">후원 방법</em></h3>
             <div class="sponsorship-grid">
                 <div class="sponsorship-item">
                     <i class="fas fa-hand-holding-usd"></i>
                     <h4>Financial Sponsorship</h4>
-                    <p>One-time or Recurring</p>
+                    <p>One-time or Recurring<em class="translation">재정적 후원 (일시불 또는 정기)</em></p>
                 </div>
                 <div class="sponsorship-item">
                     <i class="fas fa-gifts"></i>
                     <h4>In-kind Support</h4>
-                    <p>Venue, Food, Equipment</p>
+                    <p>Venue, Food, Equipment<em class="translation">현물 지원 (예: 장소, 음식, 장비 등)</em></p>
                 </div>
                 <div class="sponsorship-item">
                     <i class="fas fa-handshake"></i>
                     <h4>Strategic Partnerships</h4>
-                    <p>Aligned with our mission</p>
+                    <p>Aligned with our mission<em class="translation">전략적 파트너십</em></p>
                 </div>
             </div>
 
             <div class="contact-info">
-                <p>If you are interested, please feel free to contact us via email!</p>
+                <p>If you are interested, please feel free to contact us via email!<em class="translation">관심 있으신 분은, 이메일로 편하게 문의 주세요!</em></p>
                 <a href="mailto:ask.raines@gmail.com" class="contact-button">Contact Us</a>
             </div>
         </div>
