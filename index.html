@@ -1028,6 +1028,25 @@
             from { opacity: .4 }
             to { opacity: 1 }
         }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 40px auto;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
     </style>
 </head>
 <body>
@@ -1048,11 +1067,12 @@
                         <a href="#team">Meet the Team</a>
                     </div>
                 </li>
+                <li><a href="#year-review">2025 Year in Review</a></li>
                 <li class="dropdown">
                     <a href="#events" class="dropbtn">Events <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="#upcoming-events">Upcoming Events</a>
-                        <a href="#past-events">Past Events</a>
+                        <a href="#events">Past Events</a>
+                        <a href="#upcoming-events">2026 Events</a>
                     </div>
                 </li>
                 <li><a href="#become-member">Become a Member</a></li>
@@ -1174,9 +1194,9 @@
         </section>
 
         <section id="our-sponsors">
-            <h2>Sponsors<em class="translation">후원사</em></h2>
+            <h2>Sponsors</h2>
             <div class="sponsor">
-                <h3>Our Sponsors<em class="translation">후원사</em></h3>
+                <h3>Our Sponsors</h3>
 
                 <!-- Platinum Tier -->
                 <div class="sponsor-tier platinum">
@@ -1259,7 +1279,7 @@
                 </p>
             </div>
 
-            <h3>How Your Sponsorship Helps<em class="translation">후원금 사용처</em></h3>
+            <h3>How Your Sponsorship Helps</h3>
             <div class="sponsorship-details">
                 <div class="detail-item">
                     <i class="fas fa-calendar-alt"></i>
@@ -1278,7 +1298,7 @@
                 </div>
             </div>
 
-            <h3>Sponsor Benefits<em class="translation">스폰서 혜택</em></h3>
+            <h3>Sponsor Benefits</h3>
             <div class="sponsorship-details">
                 <div class="detail-item">
                     <i class="fas fa-microphone"></i>
@@ -1297,7 +1317,7 @@
                 </div>
             </div>
 
-            <h3>Ways to Contribute<em class="translation">후원 방법</em></h3>
+            <h3>Ways to Contribute</h3>
             <div class="contribution-options">
                 <div class="option-item">
                     <i class="fas fa-hand-holding-usd"></i>
@@ -1319,126 +1339,116 @@
             </div>
         </section>
 
+        <section id="year-review">
+            <h2>2025 Year in Review</h2>
+            <div class="event">
+                <h4>K-RAINES 2025 Year in Review<em class="translation">K-RAINES 2025년 활동 결산 (Year in Review)</em></h4>
+                    <p>
+                        What a year it has been! ✨ When we launched K-RAINES in April 2025, our goal was simple but meaningful: build a strong community connecting Korean professionals across Robotics and AI in New England. 🤖🤝 As we look back on our first year, it is inspiring to see how quickly that vision turned into a vibrant, collaborative ecosystem bridging research, industry, and innovation. 🚀🔬💡
+                        <em class="translation">
+                            정말 뜻깊은 한 해였습니다! 2025년 4월 K-RAINES가 첫발을 내디뎠을 때, 우리의 목표는 명확했습니다. 바로 뉴잉글랜드 지역의 로보틱스 및 AI 분야 한인 전문가들을 하나로 잇는 탄탄한 커뮤니티를 만드는 것이었습니다. 지난 1년을 되돌아보니, 우리의 비전이 연구와 산업, 그리고 혁신을 아우르는 역동적인 협업 생태계로 빠르게 성장해 나가는 모습이 매우 감동적입니다.
+                        </em>
+                    </p>
+
+                    <h5 style="margin-top: 30px; color: #6A5ACD; font-size: 1.3em;">2025 at a Glance</h5>
+                    <ul style="line-height: 2; margin: 20px 0;">
+                        <li>📊 <strong>Rapid Growth:</strong> 98 registered members in just eight months</li>
+                        <li>🤝 <strong>Balanced Community:</strong> 56% industry + 44% academia</li>
+                        <li>🧠 <strong>Deep Expertise:</strong> Generative AI (16.5%), Computer Vision (10.4%), Robotic Manipulation (10.0%), and more</li>
+                        <li>🎟️ <strong>Engaged Participation:</strong> 150+ total attendees across three major summits</li>
+                    </ul>
+
+                    <h5 style="margin-top: 30px; color: #6A5ACD; font-size: 1.3em;">Key Milestones</h5>
+                    <ul style="line-height: 2; margin: 20px 0;">
+                        <li>🌱 <strong>Q2 – April:</strong> Our launch event, "AI-Powered Robotics," brought together 49 pioneers at CIC Cambridge</li>
+                        <li>☀️ <strong>Q3 – August:</strong> A sold-out "AI Problem Solving" session with 55 passionate attendees</li>
+                        <li>🍂 <strong>Q4 – November:</strong> "The Physical AI Era," featuring thought leaders from Zordi, UMass Amherst, and KAIST, with 48 experts in the room</li>
+                    </ul>
+
+                    <p style="margin-top: 30px;">
+                        None of this would have been possible without the dedication of our members, the insights of our speakers, and the incredible support of our sponsors: The Consulate General of the Republic of Korea in Boston, Carbon Black, TIPA, KEIT, FuturePlay, Rainbow Robotics, and the Overseas Koreans Agency. 🙌 Thank you for believing in this community from day one. 💙
+                        <em class="translation">
+                            이 모든 결실은 회원님들의 열정과 연사님들의 소중한 인사이트, 그리고 후원사(주보스턴 대한민국 총영사관, Carbon Black, TIPA, KEIT, FuturePlay, Rainbow Robotics, 재외동포청)의 아낌없는 지원 덕분에 가능했습니다. 시작부터 저희와 함께해주시고 믿어주신 모든 분들께 깊은 감사를 드립니다.
+                        </em>
+                    </p>
+
+                    <p style="margin-top: 20px;">
+                        As we close 2025, we are grateful, energized, and more ambitious than ever. ⚡ The journey has only begun—and we are excited to push the frontier of Robotics and Physical AI even further in 2026. 🚀
+                        <em class="translation">
+                            2025년을 마무리하며, 우리는 감사함과 동시에 새로운 에너지를 얻었습니다. 우리의 여정은 이제 시작일 뿐입니다. 2026년에도 로보틱스와 Physical AI의 최전선에서 더 큰 혁신을 향해 함께 나아가기를 기대합니다.
+                        </em>
+                    </p>
+
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/s7QO4sQghz8?si=_cuEkg4ysE7ZBjC2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <p style="margin-top: 30px; font-style: italic; color: #666;">
+                        Following up on our highlight reel, we wanted to share the full story of K-RAINES' inaugural year. From our launch in April with just an idea, to closing December with nearly 100 innovators in our ranks, this slide deck captures the moments that defined us. We are building more than just a network; we are building a home for innovators. 🏠🤖
+                        <em class="translation">
+                            하이라이트 영상과 더불어 K-RAINES의 지난 1년을 담은 전체 스토리를 공유합니다. 4월의 작은 아이디어로 시작해, 12월 기준 약 100명의 혁신가들이 함께하는 커뮤니티가 되기까지의 모든 소중한 순간들을 슬라이드에 담았습니다. 우리는 단순한 네트워크를 넘어, 혁신가들이 언제든 머물고 소통할 수 있는 '든든한 보금자리'를 만들어가고 있습니다.
+                        </em>
+                    </p>
+
+                    <div class="slideshow-container" data-slideshow="yearreview">
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-0.png" alt="K-RAINES Year One Review Slide 1">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-1.png" alt="K-RAINES Year One Review Slide 2">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-2.png" alt="K-RAINES Year One Review Slide 3">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-3.png" alt="K-RAINES Year One Review Slide 4">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-4.png" alt="K-RAINES Year One Review Slide 5">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-5.png" alt="K-RAINES Year One Review Slide 6">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-6.png" alt="K-RAINES Year One Review Slide 7">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-7.png" alt="K-RAINES Year One Review Slide 8">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-8.png" alt="K-RAINES Year One Review Slide 9">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-9.png" alt="K-RAINES Year One Review Slide 10">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-10.png" alt="K-RAINES Year One Review Slide 11">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-11.png" alt="K-RAINES Year One Review Slide 12">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-12.png" alt="K-RAINES Year One Review Slide 13">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-13.png" alt="K-RAINES Year One Review Slide 14">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/year_one_review_slides_2025/KRAINES - Year One (2025 review) - updated v2-14.png" alt="K-RAINES Year One Review Slide 15">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 'yearreview')">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 'yearreview')">&#10095;</a>
+                    </div>
+            </div>
+        </section>
+
         <section id="events">
-            <h2>Events</h2>
+            <h2>Past Events</h2>
             <div id="past-events" class="past-events">
-                <h3>Recent Events</h3>
+                <h3>2025 Events</h3>
                 <div class="event">
-                    <h4>RAINES Launching Event: AI-Powered Robotics and Autonomous Driving Seminar<em class="translation">RAINES 출범 행사: AI 기반 로보틱스 및 자율주행 세미나</em></h4>
-                    <p>Date: April 28, 2025<br>
-                    Location: CIC Cambridge<br>
-                    Invited Speakers: Dr. Haewon Park (MIT Media Lab), Prof. Yoon Kim (MIT EECS)</p>
-                    <p>
-                        This seminar, hosted by the Korean Consulate in Boston, brought together experts and enthusiasts to explore the future of AI-powered robotics and autonomous driving. Dr. Haewon Park shared insights on social robots, while Prof. Yoon Kim discussed large language models, sparking engaging conversations on emerging technologies. The event fostered US-Korea collaboration, offering a platform for networking, knowledge sharing, and building new connections in the Boston tech community.
-                        <em class="translation">
-                            주 보스턴 대한민국 총영사관의 후원으로 개최된 이 세미나는 AI 기반 로보틱스와 자율주행의 미래를 탐구하기 위해 전문가들과 열정적인 분들을 한자리에 모았습니다. MIT Media Lab의 박혜원 박사님은 소셜 로봇에 대한 통찰을 공유했고, MIT EECS의 김윤형 교수님은 대규모 언어 모델에 대해 논하며 새로운 기술에 대한 활발한 논의를 이끌었습니다. 본 행사는 한미 협력을 강화하고, 보스턴 기술 커뮤니티 내 네트워킹, 지식 공유, 그리고 새로운 연결을 구축하는 기회의 장을 마련했습니다.
-                        </em>
-                        <br><br>
-                        <strong>Attendees:</strong> 49 total (35 from Industry, 14 from Academia).<em class="translation"><strong>참석자:</strong> 총 49명 (산업 35명, 학계 14명).</em>
-                    </p>
-                    <div class="slideshow-container" data-slideshow="april">
-                        <div class="slide fade">
-                            <img src="assets/event_042825/launch_event_042825_photo_1.png" alt="RAINES Launch Event Photo 1">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_042825/launch_event_042825_photo_2.png" alt="RAINES Launch Event Photo 2">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_042825/launch_event_042825_photo_3.png" alt="RAINES Launch Event Photo 3">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_042825/launch_event_042825_photo_4.png" alt="RAINES Launch Event Photo 4">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_042825/launch_event_042825_photo_5.png" alt="RAINES Launch Event Photo 5">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_042825/launch_event_042825_photo_6.png" alt="RAINES Launch Event Photo 6">
-                        </div>
-
-                        <a class="prev" onclick="plusSlides(-1, 'april')">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1, 'april')">&#10095;</a>
-                    </div>
-                </div>
-
-                <div class="event">
-                    <h4>RAINES Summer Seminar: Recent Advances in AI Problem Solving<em class="translation">K-RAINES Summer Seminar: Recent Advances in AI Problem Solving</em></h4>
-                    <p>Date: August 21, 2025<br>
-                    Location: Korean Consulate General in Boston<br>
-                    Speakers: Dr. Jungkoo Kang (IBM Research), Prof. Junehyuk Jung (Brown University & Google DeepMind)</p>
-
-                    <div class="event-main-images">
-                        <div class="event-image-container">
-                            <img src="assets/poster_event_aug_2025.png" alt="Event Poster: RAINES Summer Seminar 2025">
-                        </div>
-                        <div class="event-image-container">
-                            <img src="assets/event_082125/540735718_1185508406942466_526723454474490573_n.jpg" alt="RAINES Summer Seminar August 2025 - Group Photo">
-                        </div>
-                    </div>
-
-                    <p>
-                        On August 21st, we successfully concluded the K-RAINES Summer Seminar: Recent Advances in AI Problem Solving at the newly renovated Boston Consulate General! With a sold-out capacity of 55 attendees, this seminar was conducted with tremendous enthusiasm. Dr. Jungkoo Kang from IBM Research shared insights on LLM-based problem solving and workflow generation, while Prof. Junehyuk Jung from Brown University & Google DeepMind presented research on automated mathematical reasoning. We had meaningful time with insights from two speakers at the forefront of AI research, along with networking and dinner with participants. Thanks to the various prizes provided by the Boston Consulate General, we also enjoyed a fun raffle time, and most participants were able to take home a gift :) We thank the Consulate General of the Republic of Korea in Boston, Korea Evaluation Institute of Industrial Technology (KEIT), Rainbow Robotics, and all attendees who joined us for this seminar! K-RAINES will continue to create more opportunities for learning and exchange with various people.
-                        <em class="translation">
-                            지난 8월 21일, 새로 단장한 보스턴 총영사관에서 K-RAINES Summer Seminar: Recent Advances in AI Problem Solving을 성공적으로 마쳤습니다! 55명 정원 마감과 함께 뜨거운 관심 속에 진행된 이번 세미나에서는 🧠 IBM Research 강정구 박사님이 LLM 기반 문제 해결 및 워크플로우 생성을, 📐 Brown University & Google DeepMind 정준혁 교수님이 수학 추론 자동화 연구를 공유해주셨습니다. AI 연구의 최전선에 있는 두 연사의 인사이트와 함께, 참가자분들과의 네트워킹과 만찬으로 의미 있는 시간을 보냈습니다. 또한 보스턴총영사관에서 다양한 상품을 지원해주신 덕분에 즐거운 래플 시간도 함께 하며 참가자분들 대부분이 선물도 하나씩 들고 갈 수 있었습니다 :) 이번 세미나를 위해 함께해주신 주보스턴대한민국총영사관, 한국산업기술기획평가원(KEIT), 레인보우로보틱스, 그리고 참석해주신 모든 분들께 감사드립니다! 앞으로도 K-RAINES는 다양한 분들과 함께 더 많은 배움과 교류의 장을 만들어가겠습니다.
-                        </em>
-                        <br><br>
-                        <strong>Attendees:</strong> 55 total (sold out capacity).<em class="translation"><strong>참석자:</strong> 총 55명 (정원 마감).</em>
-                    </p>
-
-                    <div class="slideshow-container" data-slideshow="august">
-                        <div class="slide fade">
-                            <img src="assets/event_082125/542149797_1185508403609133_2570887981030982218_n.jpg" alt="RAINES Summer Seminar August 2025 Photo 1">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/541448939_1185508400275800_5590498429418958780_n.jpg" alt="RAINES Summer Seminar August 2025 Photo 2">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-59-00 009.jpeg" alt="RAINES Summer Seminar August 2025 Photo 3">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-58-46 003.jpeg" alt="RAINES Summer Seminar August 2025 Photo 4">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-58-43 001.jpeg" alt="RAINES Summer Seminar August 2025 Photo 5">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-50 029.jpeg" alt="RAINES Summer Seminar August 2025 Photo 6">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-37 022.jpeg" alt="RAINES Summer Seminar August 2025 Photo 7">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-35 021.jpeg" alt="RAINES Summer Seminar August 2025 Photo 8">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-33 019.jpeg" alt="RAINES Summer Seminar August 2025 Photo 9">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-22 015.jpeg" alt="RAINES Summer Seminar August 2025 Photo 10">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-16 012.jpeg" alt="RAINES Summer Seminar August 2025 Photo 11">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-12 010.jpeg" alt="RAINES Summer Seminar August 2025 Photo 12">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-07 008.jpeg" alt="RAINES Summer Seminar August 2025 Photo 13">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-02 006.jpeg" alt="RAINES Summer Seminar August 2025 Photo 14">
-                        </div>
-                        <div class="slide fade">
-                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-54-55 003.jpeg" alt="RAINES Summer Seminar August 2025 Photo 15">
-                        </div>
-
-                        <a class="prev" onclick="plusSlides(-1, 'august')">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1, 'august')">&#10095;</a>
-                    </div>
-                </div>
-
-                <div class="event">
-                    <h4>K-RAINES Fall Event: The Physical AI Era: Korea-US New Technology Cooperation<em class="translation">K-RAINES 가을 행사: Physical AI 시대: 한미 신기술 협력</em></h4>
+                    <h4>K-RAINES Fall Event: The Physical AI Era: Korea-US New Technology Cooperation<em class="translation">K-RAINES 추계 네트워킹 행사: Physical AI 시대의 한미 신기술 협력</em></h4>
                     <p>Date: November 17, 2025 (Monday) 5:30 PM - 8:00 PM<br>
                     Location: CIC Venture Café (1 Broadway, Cambridge)<br>
                     Speakers: CEO Lee Gil-woo (Zordi), Prof. Benjamin Marlin (University of Massachusetts Amherst), Prof. Kim Chang-ik (KAIST), Advisor HK Kwon (권혁민, Carbon Black), Director Lee Hoon-bae (이훈배, TIPA)</p>
@@ -1455,10 +1465,10 @@
                     <p>
                         On November 17th, K-RAINES successfully hosted its fall networking event, "The Physical AI Era: Korea-US New Technology Cooperation," at CIC Venture Café in Cambridge. This special event, sponsored by the Consulate General of the Republic of Korea in Boston, Overseas Koreans Agency, TIPA (Korea Technology and Information Promotion Agency for SMEs), and Carbon Black, brought together 48 attendees to explore the exciting frontier of Physical AI. The event began with sponsor speeches, starting with Deputy Consul General Kwak Jung-yeol (곽정열) from the Consulate General of the Republic of Korea in Boston, followed by Director Lee Hoon-bae (이훈배) from TIPA and Advisor HK Kwon (권혁민) representing Carbon Black. Three distinguished speakers then shared their insights: CEO Lee Gil-woo from Zordi, Prof. Benjamin Marlin from University of Massachusetts Amherst, and Prof. Kim Chang-ik from KAIST. The event featured engaging presentations and Q&A sessions, followed by a panel discussion with all speakers, and concluded with networking and dinner, fostering meaningful connections and collaboration between Korea and the US in advancing AI technologies. This event marked a wonderful conclusion to the year, bringing together the community to share knowledge and build lasting relationships in the Boston tech ecosystem.
                         <em class="translation">
-                            지난 11월 17일, K-RAINES가 케임브리지 CIC Venture Café에서 "Physical AI 시대: 한미 신기술 협력" 가을 네트워킹 이벤트를 성공적으로 개최했습니다. 주보스턴 총영사관, 재외동포청, 중소기업기술정보진흥원(TIPA), 카본 블랙의 후원으로 진행된 이번 특별 행사에는 48명의 참석자들이 모여 Physical AI의 흥미진진한 최전선을 탐구했습니다. 행사는 주보스턴 총영사관 곽정열 부총영사님의 인사말로 시작되었고, 이어서 TIPA 이훈배 소장님과 카본 블랙 권혁민 어드바이저의 후원사 인사말이 이어졌습니다. 그 후 Zordi 이길우 대표, 매사추세츠 대학교 앰허스트 캠퍼스 Benjamin Marlin 교수, KAIST 김창익 교수 등 세 분의 연사분들이 인사이트를 공유했습니다. 이번 행사는 발표 및 Q&A 세션, 모든 연사분들이 참여한 패널 토론, 그리고 네트워킹과 만찬으로 이어져 한미 간 AI 기술 발전을 위한 의미 있는 연결과 협력을 촉진했습니다. 올 한 해를 마무리하며 커뮤니티가 함께 지식을 공유하고 보스턴 기술 생태계에서 지속적인 관계를 구축하는 뜻깊은 시간이 되었습니다.
+                            지난 11월 17일, K-RAINES는 케임브리지 CIC 벤처 카페에서 'Physical AI 시대의 한미 신기술 협력'이라는 주제로 추계 네트워킹 행사를 성황리에 개최했습니다. 주보스턴 총영사관, 재외동포청, 중소기업기술정보진흥원(TIPA), 카본 블랙의 후원으로 마련된 이번 행사에는 48명의 전문가가 참석하여 Physical AI의 최전선을 탐구했습니다. 행사는 주보스턴 총영사관 곽정열 부총영사님, TIPA 이훈배 소장님, 그리고 카본 블랙의 권혁민 어드바이저님의 축사로 시작되었습니다. 이어 Zordi 이길우 대표님, 매사추세츠 대학교 Benjamin Marlin 교수님, KAIST 김창익 교수님 등 세 분의 연사님이 심도 있는 인사이트를 공유해 주셨습니다. 특히 강연 후 이어진 Q&A와 패널 토론, 그리고 네트워킹 만찬을 통해 한미 간 AI 기술 협력을 위한 실질적인 교류가 이루어졌습니다. 이번 행사는 올 한 해를 뜻깊게 마무리하며 보스턴 테크 생태계 내에서 커뮤니티의 결속을 다지는 소중한 시간이 되었습니다.
                         </em>
                         <br><br>
-                        <strong>Attendees:</strong> 48 people attended.<em class="translation"><strong>참석자:</strong> 48명 참석.</em>
+                        <strong>Attendees:</strong> 48 people attended.<em class="translation"><strong>참석자:</strong> 총 48명</em>
                     </p>
 
                     <div class="slideshow-container" data-slideshow="november">
@@ -1590,9 +1600,47 @@
                         <a class="next" onclick="plusSlides(1, 'november')">&#10095;</a>
                     </div>
                 </div>
+
+                <div class="event">
+                    <h4>RAINES Launching Event: AI-Powered Robotics and Autonomous Driving Seminar<em class="translation">RAINES 출범 기념 세미나: AI 기반 로보틱스 및 자율주행의 미래</em></h4>
+                    <p>Date: April 28, 2025<br>
+                    Location: CIC Cambridge<br>
+                    Invited Speakers: Dr. Haewon Park (MIT Media Lab), Prof. Yoon Kim (MIT EECS)</p>
+                    <p>
+                        This seminar, hosted by the Korean Consulate in Boston, brought together experts and enthusiasts to explore the future of AI-powered robotics and autonomous driving. Dr. Haewon Park shared insights on social robots, while Prof. Yoon Kim discussed large language models, sparking engaging conversations on emerging technologies. The event fostered US-Korea collaboration, offering a platform for networking, knowledge sharing, and building new connections in the Boston tech community.
+                        <em class="translation">
+                            주보스턴 대한민국 총영사관의 후원으로 열린 이번 세미나에서는 전문가와 업계 관계자들이 모여 AI 기반 로보틱스와 자율주행의 미래를 심도 있게 논의했습니다. MIT 미디어랩의 박혜원 박사님은 소셜 로봇에 대한 인사이트를, MIT EECS의 김윤형 교수님은 대규모 언어 모델(LLM)에 대한 최신 지견을 공유하며 활발한 토론을 이끌었습니다. 이번 행사는 한미 기술 협력을 강화하고, 보스턴 테크 커뮤니티 내 전문가들이 지식을 나누며 새로운 인연을 맺는 소중한 장이 되었습니다.
+                        </em>
+                        <br><br>
+                        <strong>Attendees:</strong> 49 total (35 from Industry, 14 from Academia).<em class="translation"><strong>참석자:</strong> 총 49명 (산업계 35명, 학계 14명)</em>
+                    </p>
+                    <div class="slideshow-container" data-slideshow="april">
+                        <div class="slide fade">
+                            <img src="assets/event_042825/launch_event_042825_photo_1.png" alt="RAINES Launch Event Photo 1">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_042825/launch_event_042825_photo_2.png" alt="RAINES Launch Event Photo 2">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_042825/launch_event_042825_photo_3.png" alt="RAINES Launch Event Photo 3">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_042825/launch_event_042825_photo_4.png" alt="RAINES Launch Event Photo 4">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_042825/launch_event_042825_photo_5.png" alt="RAINES Launch Event Photo 5">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_042825/launch_event_042825_photo_6.png" alt="RAINES Launch Event Photo 6">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 'april')">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 'april')">&#10095;</a>
+                    </div>
+                </div>
             </div>
             <div id="upcoming-events" class="future-events">
-                <h3>Upcoming Events</h3>
+                <h3>2026 Events</h3>
                 <div class="event future-event">
                     <p>Stay tuned for our next exciting events! Follow us on social media or join our mailing list to be the first to know about upcoming seminars, workshops, and networking opportunities.
                         <em class="translation">다음 흥미진진한 이벤트를 기대해 주세요! 소셜 미디어를 팔로우하거나 메일링 리스트에 가입하여 다가오는 세미나, 워크샵, 네트워킹 기회에 대해 가장 먼저 알아보세요.</em>
@@ -1603,6 +1651,82 @@
                 </div>
             </div>
         </section>
+                    <p>Date: August 21, 2025<br>
+                    Location: Korean Consulate General in Boston<br>
+                    Speakers: Dr. Jungkoo Kang (IBM Research), Prof. Junehyuk Jung (Brown University & Google DeepMind)</p>
+
+                    <div class="event-main-images">
+                        <div class="event-image-container">
+                            <img src="assets/poster_event_aug_2025.png" alt="Event Poster: RAINES Summer Seminar 2025">
+                        </div>
+                        <div class="event-image-container">
+                            <img src="assets/event_082125/540735718_1185508406942466_526723454474490573_n.jpg" alt="RAINES Summer Seminar August 2025 - Group Photo">
+                        </div>
+                    </div>
+
+                    <p>
+                        On August 21st, we successfully concluded the K-RAINES Summer Seminar: Recent Advances in AI Problem Solving at the newly renovated Boston Consulate General! With a sold-out capacity of 55 attendees, this seminar was conducted with tremendous enthusiasm. Dr. Jungkoo Kang from IBM Research shared insights on LLM-based problem solving and workflow generation, while Prof. Junehyuk Jung from Brown University & Google DeepMind presented research on automated mathematical reasoning. We had meaningful time with insights from two speakers at the forefront of AI research, along with networking and dinner with participants. Thanks to the various prizes provided by the Boston Consulate General, we also enjoyed a fun raffle time, and most participants were able to take home a gift :) We thank the Consulate General of the Republic of Korea in Boston, Korea Evaluation Institute of Industrial Technology (KEIT), Rainbow Robotics, and all attendees who joined us for this seminar! K-RAINES will continue to create more opportunities for learning and exchange with various people.
+                        <em class="translation">
+                            지난 8월 21일, 새롭게 단장한 주보스턴 총영사관에서 'K-RAINES 하계 세미나: AI 문제 해결의 최신 동향'을 성황리에 마쳤습니다! 55명 정원 매진이라는 뜨거운 관심 속에 진행된 이번 세미나에서는 IBM 리서치의 강정구 박사님이 LLM 기반 문제 해결 및 워크플로우 생성을, 브라운 대학교 및 구글 딥마인드의 정준혁 교수님이 수학적 추론 자동화 연구를 공유해 주셨습니다. AI 연구의 최전선에 있는 두 연사님의 인사이트를 듣고, 참가자분들과 네트워킹 및 만찬을 즐기며 뜻깊은 시간을 보냈습니다. 또한 주보스턴 총영사관에서 준비해 주신 다양한 경품 덕분에 더욱 즐거운 래플 시간이 되었으며, 많은 분이 기분 좋게 선물을 안고 돌아가셨습니다 :) 이번 세미나를 위해 함께해 주신 주보스턴 대한민국 총영사관, 한국산업기술기획평가원(KEIT), 레인보우로보틱스, 그리고 모든 참석자분께 깊은 감사를 드립니다! K-RAINES는 앞으로도 지속적인 배움과 교류의 장을 만들어 가겠습니다.
+                        </em>
+                        <br><br>
+                        <strong>Attendees:</strong> 55 total (sold out capacity).<em class="translation"><strong>참석자:</strong> 총 55명 (정원 마감)</em>
+                    </p>
+
+                    <div class="slideshow-container" data-slideshow="august">
+                        <div class="slide fade">
+                            <img src="assets/event_082125/542149797_1185508403609133_2570887981030982218_n.jpg" alt="RAINES Summer Seminar August 2025 Photo 1">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/541448939_1185508400275800_5590498429418958780_n.jpg" alt="RAINES Summer Seminar August 2025 Photo 2">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-59-00 009.jpeg" alt="RAINES Summer Seminar August 2025 Photo 3">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-58-46 003.jpeg" alt="RAINES Summer Seminar August 2025 Photo 4">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-58-43 001.jpeg" alt="RAINES Summer Seminar August 2025 Photo 5">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-50 029.jpeg" alt="RAINES Summer Seminar August 2025 Photo 6">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-37 022.jpeg" alt="RAINES Summer Seminar August 2025 Photo 7">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-35 021.jpeg" alt="RAINES Summer Seminar August 2025 Photo 8">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-33 019.jpeg" alt="RAINES Summer Seminar August 2025 Photo 9">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-56-22 015.jpeg" alt="RAINES Summer Seminar August 2025 Photo 10">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-16 012.jpeg" alt="RAINES Summer Seminar August 2025 Photo 11">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-12 010.jpeg" alt="RAINES Summer Seminar August 2025 Photo 12">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-07 008.jpeg" alt="RAINES Summer Seminar August 2025 Photo 13">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-55-02 006.jpeg" alt="RAINES Summer Seminar August 2025 Photo 14">
+                        </div>
+                        <div class="slide fade">
+                            <img src="assets/event_082125/KakaoTalk_Photo_2025-09-06-06-54-55 003.jpeg" alt="RAINES Summer Seminar August 2025 Photo 15">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 'august')">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 'august')">&#10095;</a>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <h4>RAINES Launching Event: AI-Powered Robotics and Autonomous Driving Seminar<em class="translation">RAINES 출범 기념 세미나: AI 기반 로보틱스 및 자율주행의 미래</em></h4>
     </div>
 
     <footer class="footer">
@@ -1642,7 +1766,8 @@
         const slideshows = {
             april: { index: 0, timeout: null },
             august: { index: 0, timeout: null },
-            november: { index: 0, timeout: null }
+            november: { index: 0, timeout: null },
+            yearreview: { index: 0, timeout: null }
         };
 
         function showSlides(slideshowId) {
